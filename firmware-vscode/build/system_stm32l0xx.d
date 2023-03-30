@@ -24,9 +24,7 @@ build/system_stm32l0xx.o: Core/Src/system_stm32l0xx.c \
  Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_i2c.h \
  Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_i2c_ex.h \
  Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_pwr.h \
- Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_pwr_ex.h \
- Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_uart.h \
- Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_uart_ex.h
+ Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_pwr_ex.h
 Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l0xx.h:
 Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l011xx.h:
 Drivers/CMSIS/Include/core_cm0plus.h:
@@ -54,5 +52,3 @@ Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_i2c.h:
 Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_i2c_ex.h:
 Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_pwr.h:
 Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_pwr_ex.h:
-Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_uart.h:
-Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_uart_ex.h:

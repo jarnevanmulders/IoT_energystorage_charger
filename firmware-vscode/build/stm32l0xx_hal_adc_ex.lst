@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s 			page 1
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccJc4Zci.s 			page 1
 
 
    1              		.cpu cortex-m0plus
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s 			page 1
   29:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_adc_ex.c ****   ******************************************************************************
   30:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_adc_ex.c ****   */
   31:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_adc_ex.c **** 
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s 			page 2
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccJc4Zci.s 			page 2
 
 
   32:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_adc_ex.c **** /* Includes ------------------------------------------------------------------*/
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s 			page 1
   86:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_adc_ex.c ****     [..]  This section provides functions allowing to:
   87:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_adc_ex.c ****       (+) Perform the ADC calibration.
   88:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_adc_ex.c **** @endverbatim
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s 			page 3
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccJc4Zci.s 			page 3
 
 
   89:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_adc_ex.c ****   * @{
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s 			page 1
   56              		.loc 1 114 3 discriminator 2 view .LVU9
  115:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_adc_ex.c **** 
  116:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_adc_ex.c ****   /* Calibration prerequisite: ADC must be disabled. */
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s 			page 4
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccJc4Zci.s 			page 4
 
 
  117:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_adc_ex.c ****   if (ADC_IS_ENABLE(hadc) == RESET)
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s 			page 1
  157:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_adc_ex.c ****     }
  158:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_adc_ex.c **** 
  159:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_adc_ex.c ****     /* Restore ADC DMA transfer request after calibration */
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s 			page 5
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccJc4Zci.s 			page 5
 
 
  160:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_adc_ex.c ****     SET_BIT(hadc->Instance->CFGR1, backup_setting_adc_dma_transfer);
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s 			page 1
  105              		.loc 1 134 9 is_stmt 0 view .LVU24
  106 004a 2268     		ldr	r2, [r4]
  134:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_adc_ex.c **** 
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s 			page 6
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccJc4Zci.s 			page 6
 
 
  107              		.loc 1 134 19 view .LVU25
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s 			page 1
  147 007a 9343     		bics	r3, r2
  148 007c 023A     		subs	r2, r2, #2
  149 007e 1343     		orrs	r3, r2
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s 			page 7
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccJc4Zci.s 			page 7
 
 
  150 0080 6365     		str	r3, [r4, #84]
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s 			page 1
  188              	.LVL12:
  189              		.loc 1 180 1 view .LVU53
  190 00a6 70BD     		pop	{r4, r5, r6, pc}
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s 			page 8
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccJc4Zci.s 			page 8
 
 
  191              	.LVL13:
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s 			page 1
  229 0006 7F20     		movs	r0, #127
  230              	.LVL16:
  231              		.loc 1 196 37 view .LVU63
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s 			page 9
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccJc4Zci.s 			page 9
 
 
  232 0008 1840     		ands	r0, r3
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s 			page 1
  266              		.loc 1 218 3 view .LVU71
  267              		.loc 1 218 3 view .LVU72
  268 0004 5021     		movs	r1, #80
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s 			page 10
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccJc4Zci.s 			page 10
 
 
  269              	.LVL19:
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s 			page 1
  304              		.loc 1 237 20 is_stmt 0 view .LVU83
  305 002e 0120     		movs	r0, #1
  306              	.LVL23:
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s 			page 11
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccJc4Zci.s 			page 11
 
 
  307              	.L16:
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s 			page 1
  227:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_adc_ex.c ****   }
  344              		.loc 1 227 29 view .LVU98
  345 0052 0243     		orrs	r2, r0
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s 			page 12
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccJc4Zci.s 			page 12
 
 
  346              	.LVL26:
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s 			page 1
  260:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_adc_ex.c ****   /* Enable the Buffer for the ADC by setting ENBUF_SENSOR_ADC bit in the CFGR3 register */
  261:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_adc_ex.c ****   SET_BIT(SYSCFG->CFGR3, SYSCFG_CFGR3_ENBUF_VREFINT_ADC);
  383              		.loc 1 261 3 view .LVU106
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s 			page 13
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccJc4Zci.s 			page 13
 
 
  384 0002 0D4A     		ldr	r2, .L27
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s 			page 1
  277:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_adc_ex.c ****   }
  278:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_adc_ex.c **** 
  279:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_adc_ex.c ****   return HAL_OK;
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s 			page 14
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccJc4Zci.s 			page 14
 
 
  423              		.loc 1 279 10 view .LVU119
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s 			page 1
  466              		.cfi_endproc
  467              	.LFE44:
  469              		.section	.text.HAL_ADCEx_EnableVREFINTTempSensor,"ax",%progbits
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s 			page 15
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccJc4Zci.s 			page 15
 
 
  470              		.align	1
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s 			page 1
  503              	.L33:
  504              		.loc 1 314 10 view .LVU131
  505 0014 084B     		ldr	r3, .L38
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s 			page 16
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccJc4Zci.s 			page 16
 
 
  506 0016 1B6A     		ldr	r3, [r3, #32]
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s 			page 1
  548              		.code	16
  549              		.thumb_func
  551              	HAL_ADCEx_DisableVREFINTTempSensor:
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s 			page 17
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccJc4Zci.s 			page 17
 
 
  552              	.LFB46:
@@ -1005,30 +1005,30 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s 			page 1
  582              		.file 7 "Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_dma.h"
  583              		.file 8 "Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_adc.h"
  584              		.file 9 "Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal.h"
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s 			page 18
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccJc4Zci.s 			page 18
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32l0xx_hal_adc_ex.c
-C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s:19     .text.HAL_ADCEx_Calibration_Start:0000000000000000 $t
-C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s:25     .text.HAL_ADCEx_Calibration_Start:0000000000000000 HAL_ADCEx_Calibration_Start
-C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s:201    .text.HAL_ADCEx_Calibration_Start:00000000000000ac $d
-C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s:206    .text.HAL_ADCEx_Calibration_GetValue:0000000000000000 $t
-C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s:212    .text.HAL_ADCEx_Calibration_GetValue:0000000000000000 HAL_ADCEx_Calibration_GetValue
-C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s:240    .text.HAL_ADCEx_Calibration_SetValue:0000000000000000 $t
-C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s:246    .text.HAL_ADCEx_Calibration_SetValue:0000000000000000 HAL_ADCEx_Calibration_SetValue
-C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s:364    .text.HAL_ADCEx_EnableVREFINT:0000000000000000 $t
-C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s:370    .text.HAL_ADCEx_EnableVREFINT:0000000000000000 HAL_ADCEx_EnableVREFINT
-C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s:434    .text.HAL_ADCEx_EnableVREFINT:0000000000000038 $d
-C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s:439    .text.HAL_ADCEx_DisableVREFINT:0000000000000000 $t
-C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s:445    .text.HAL_ADCEx_DisableVREFINT:0000000000000000 HAL_ADCEx_DisableVREFINT
-C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s:464    .text.HAL_ADCEx_DisableVREFINT:000000000000000c $d
-C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s:470    .text.HAL_ADCEx_EnableVREFINTTempSensor:0000000000000000 $t
-C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s:476    .text.HAL_ADCEx_EnableVREFINTTempSensor:0000000000000000 HAL_ADCEx_EnableVREFINTTempSensor
-C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s:540    .text.HAL_ADCEx_EnableVREFINTTempSensor:0000000000000038 $d
-C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s:545    .text.HAL_ADCEx_DisableVREFINTTempSensor:0000000000000000 $t
-C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s:551    .text.HAL_ADCEx_DisableVREFINTTempSensor:0000000000000000 HAL_ADCEx_DisableVREFINTTempSensor
-C:\Users\jarne\AppData\Local\Temp\ccBjrVqZ.s:570    .text.HAL_ADCEx_DisableVREFINTTempSensor:000000000000000c $d
+C:\Users\jarne\AppData\Local\Temp\ccJc4Zci.s:19     .text.HAL_ADCEx_Calibration_Start:0000000000000000 $t
+C:\Users\jarne\AppData\Local\Temp\ccJc4Zci.s:25     .text.HAL_ADCEx_Calibration_Start:0000000000000000 HAL_ADCEx_Calibration_Start
+C:\Users\jarne\AppData\Local\Temp\ccJc4Zci.s:201    .text.HAL_ADCEx_Calibration_Start:00000000000000ac $d
+C:\Users\jarne\AppData\Local\Temp\ccJc4Zci.s:206    .text.HAL_ADCEx_Calibration_GetValue:0000000000000000 $t
+C:\Users\jarne\AppData\Local\Temp\ccJc4Zci.s:212    .text.HAL_ADCEx_Calibration_GetValue:0000000000000000 HAL_ADCEx_Calibration_GetValue
+C:\Users\jarne\AppData\Local\Temp\ccJc4Zci.s:240    .text.HAL_ADCEx_Calibration_SetValue:0000000000000000 $t
+C:\Users\jarne\AppData\Local\Temp\ccJc4Zci.s:246    .text.HAL_ADCEx_Calibration_SetValue:0000000000000000 HAL_ADCEx_Calibration_SetValue
+C:\Users\jarne\AppData\Local\Temp\ccJc4Zci.s:364    .text.HAL_ADCEx_EnableVREFINT:0000000000000000 $t
+C:\Users\jarne\AppData\Local\Temp\ccJc4Zci.s:370    .text.HAL_ADCEx_EnableVREFINT:0000000000000000 HAL_ADCEx_EnableVREFINT
+C:\Users\jarne\AppData\Local\Temp\ccJc4Zci.s:434    .text.HAL_ADCEx_EnableVREFINT:0000000000000038 $d
+C:\Users\jarne\AppData\Local\Temp\ccJc4Zci.s:439    .text.HAL_ADCEx_DisableVREFINT:0000000000000000 $t
+C:\Users\jarne\AppData\Local\Temp\ccJc4Zci.s:445    .text.HAL_ADCEx_DisableVREFINT:0000000000000000 HAL_ADCEx_DisableVREFINT
+C:\Users\jarne\AppData\Local\Temp\ccJc4Zci.s:464    .text.HAL_ADCEx_DisableVREFINT:000000000000000c $d
+C:\Users\jarne\AppData\Local\Temp\ccJc4Zci.s:470    .text.HAL_ADCEx_EnableVREFINTTempSensor:0000000000000000 $t
+C:\Users\jarne\AppData\Local\Temp\ccJc4Zci.s:476    .text.HAL_ADCEx_EnableVREFINTTempSensor:0000000000000000 HAL_ADCEx_EnableVREFINTTempSensor
+C:\Users\jarne\AppData\Local\Temp\ccJc4Zci.s:540    .text.HAL_ADCEx_EnableVREFINTTempSensor:0000000000000038 $d
+C:\Users\jarne\AppData\Local\Temp\ccJc4Zci.s:545    .text.HAL_ADCEx_DisableVREFINTTempSensor:0000000000000000 $t
+C:\Users\jarne\AppData\Local\Temp\ccJc4Zci.s:551    .text.HAL_ADCEx_DisableVREFINTTempSensor:0000000000000000 HAL_ADCEx_DisableVREFINTTempSensor
+C:\Users\jarne\AppData\Local\Temp\ccJc4Zci.s:570    .text.HAL_ADCEx_DisableVREFINTTempSensor:000000000000000c $d
 
 UNDEFINED SYMBOLS
 HAL_GetTick

@@ -22,6 +22,36 @@
             "cwd": "${workspaceFolder}",
             "program": "${file}",
             "console": "integratedTerminal"
+        },
+        {
+            "showDevDebugOutput": "parsed",
+            "cwd": "${workspaceRoot}",
+            "executable": "./build/firmware-vscode.elf",
+            "name": "Debug STM32",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "openocd",
+            "preLaunchTask": "Build STM",
+            "device": "stm32l011",
+            "configFiles": [
+                "openocd.cfg"
+            ],
+            "svdFile": "STM32L0x1.svd"
+        },
+        {
+            "showDevDebugOutput": "parsed",
+            "cwd": "${workspaceRoot}",
+            "executable": "./build/firmware-vscode.elf",
+            "name": "Attach STM32",
+            "request": "attach",
+            "type": "cortex-debug",
+            "servertype": "openocd",
+            "preLaunchTask": "Build STM",
+            "device": "stm32l011",
+            "configFiles": [
+                "openocd.cfg"
+            ],
+            "svdFile": "STM32L0x1.svd"
         }
     ]
 }

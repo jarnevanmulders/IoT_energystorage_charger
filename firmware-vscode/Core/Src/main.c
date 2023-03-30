@@ -44,8 +44,6 @@
 /* Private variables ---------------------------------------------------------*/
 ADC_HandleTypeDef hadc;
 
-UART_HandleTypeDef huart2;
-
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
@@ -53,7 +51,6 @@ UART_HandleTypeDef huart2;
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
-// static void MX_USART2_UART_Init(void);
 static void MX_ADC_Init(void);
 /* USER CODE BEGIN PFP */
 
@@ -70,11 +67,10 @@ void ADC_Select_CH5(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
-  uint16_t ADC_CH5 = 0;
-  uint16_t ADC_REF = 0;
+  uint16_t ADC_CH5, ADC_CH6, ADC_CH7, ADC_REF;
   uint16_t supply_voltage_mv = 0;
-  uint16_t input_ref_mv = 0;
   uint16_t input_voltage_mv = 0;
+  uint16_t buck_output_voltage_mv = 0;
 
   // uint32_t reference = 0;
 
@@ -109,7 +105,6 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  // MX_USART2_UART_Init();
   MX_ADC_Init();
   /* USER CODE BEGIN 2 */
 
@@ -122,6 +117,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
+
     /* USER CODE BEGIN 3 */
 
     // Start ADC Conversion and read two ADC values
@@ -130,6 +126,14 @@ int main(void)
     // ADC_CHANNEL_5 & Read The ADC Conversion Result
     HAL_ADC_PollForConversion(&hadc, 100);
 		ADC_CH5 = HAL_ADC_GetValue(&hadc);
+
+    // ADC_CHANNEL_6 & Read The ADC Conversion Result
+    HAL_ADC_PollForConversion(&hadc, 100);
+		ADC_CH6 = HAL_ADC_GetValue(&hadc);
+
+    // ADC_CHANNEL_7 & Read The ADC Conversion Result
+    HAL_ADC_PollForConversion(&hadc, 100);
+		ADC_CH7 = HAL_ADC_GetValue(&hadc);
 
     // ADC_CHANNEL_VREFINT & Read The ADC Conversion Result
     HAL_ADC_PollForConversion(&hadc, 100);
@@ -142,15 +146,36 @@ int main(void)
     supply_voltage_mv = 1200*4096/ADC_REF;
 
     // Calculate input voltage BUCK converter
-    input_ref_mv = ADC_CH5*supply_voltage_mv/4096;
-    input_voltage_mv = input_ref_mv*224700/4700;
+    input_voltage_mv = ADC_CH5*supply_voltage_mv/4096*224700/4700;
 
+    // Calculate buck converter output voltage
+    buck_output_voltage_mv = ADC_CH7*supply_voltage_mv/4096*71000/15000;
+
+    // Enable/disable PG if input voltage is lower than 25V
+    if(input_voltage_mv < 25000){
+      HAL_GPIO_WritePin(PG_GPIO_Port, PG_Pin, GPIO_PIN_SET);
+    }
+    else{
+      HAL_GPIO_WritePin(PG_GPIO_Port, PG_Pin, GPIO_PIN_RESET);
+    }
+
+    // Enable/disable buck converter
+    // HAL_GPIO_WritePin(BUCK_EN_GPIO_Port, BUCK_EN_Pin, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(BUCK_EN_GPIO_Port, BUCK_EN_Pin, GPIO_PIN_SET);
+
+    // Enable/disable load switch 1
+    // HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, GPIO_PIN_SET);
+
+    // Enable/disable load switch 2
+    // HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, GPIO_PIN_RESET);
+    // HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, GPIO_PIN_SET);
 
 
     HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
-    HAL_Delay(500);
+    HAL_Delay(100);
     HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
-    HAL_Delay(500);
+    HAL_Delay(100);
 
   }
   /* USER CODE END 3 */
@@ -164,7 +189,6 @@ void SystemClock_Config(void)
 {
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
-  RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
 
   /** Configure the main internal regulator output voltage
   */
@@ -193,12 +217,6 @@ void SystemClock_Config(void)
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
 
   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_USART2;
-  PeriphClkInit.Usart2ClockSelection = RCC_USART2CLKSOURCE_PCLK1;
-  if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
   {
     Error_Handler();
   }
@@ -257,6 +275,24 @@ static void MX_ADC_Init(void)
 
   /** Configure for the selected ADC regular channel to be converted.
   */
+  sConfig.Channel = ADC_CHANNEL_6;
+  sConfig.Rank = ADC_RANK_CHANNEL_NUMBER;
+  if (HAL_ADC_ConfigChannel(&hadc, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Configure for the selected ADC regular channel to be converted.
+  */
+  sConfig.Channel = ADC_CHANNEL_7;
+  sConfig.Rank = ADC_RANK_CHANNEL_NUMBER;
+  if (HAL_ADC_ConfigChannel(&hadc, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Configure for the selected ADC regular channel to be converted.
+  */
   sConfig.Channel = ADC_CHANNEL_VREFINT;
   sConfig.Rank = ADC_RANK_CHANNEL_NUMBER;
   if (HAL_ADC_ConfigChannel(&hadc, &sConfig) != HAL_OK)
@@ -265,44 +301,11 @@ static void MX_ADC_Init(void)
   }
   /* USER CODE BEGIN ADC_Init 2 */
 
+  // *** DO not ferget to add "sConfig.Rank = ADC_RANK_CHANNEL_NUMBER;" if regenerating HAL drivers with STM32cubeMX !!! ***
+
   /* USER CODE END ADC_Init 2 */
 
 }
-
-// /**
-//   * @brief USART2 Initialization Function
-//   * @param None
-//   * @retval None
-//   */
-// static void MX_USART2_UART_Init(void)
-// {
-
-//   /* USER CODE BEGIN USART2_Init 0 */
-
-//   /* USER CODE END USART2_Init 0 */
-
-//   /* USER CODE BEGIN USART2_Init 1 */
-
-//   /* USER CODE END USART2_Init 1 */
-//   huart2.Instance = USART2;
-//   huart2.Init.BaudRate = 9600;
-//   huart2.Init.WordLength = UART_WORDLENGTH_8B;
-//   huart2.Init.StopBits = UART_STOPBITS_1;
-//   huart2.Init.Parity = UART_PARITY_NONE;
-//   huart2.Init.Mode = UART_MODE_TX_RX;
-//   huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
-//   huart2.Init.OverSampling = UART_OVERSAMPLING_16;
-//   huart2.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
-//   huart2.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
-//   if (HAL_UART_Init(&huart2) != HAL_OK)
-//   {
-//     Error_Handler();
-//   }
-//   /* USER CODE BEGIN USART2_Init 2 */
-
-//   /* USER CODE END USART2_Init 2 */
-
-// }
 
 /**
   * @brief GPIO Initialization Function
@@ -344,6 +347,14 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(INT_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : PB6 PB7 */
+  GPIO_InitStruct.Pin = GPIO_PIN_6|GPIO_PIN_7;
+  GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+  GPIO_InitStruct.Alternate = GPIO_AF0_USART2;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
   /* EXTI interrupt init*/
   HAL_NVIC_SetPriority(EXTI4_15_IRQn, 0, 0);

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 1
 
 
    1              		.cpu cortex-m0plus
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
   30:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****       (+) Configure the clock source(s) for peripherals whose clocks are not
   31:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****           derived from the System clock (I2S, RTC, ADC, USB OTG FS/SDIO/RNG)
   32:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****           (*) SDIO only for STM32L0xxxD devices
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 2
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 2
 
 
   33:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
   87:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c **** #define MCO2_GPIO_PORT        GPIOA
   88:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c **** #define MCO2_PIN              GPIO_PIN_9
   89:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c **** 
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 3
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 3
 
 
   90:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c **** #if defined(RCC_MCO3_SUPPORT)
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  144:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****       (#) MCO1/MCO2/MCO3 (microcontroller clock output), used to output SYSCLK, HSI, LSI, MSI, LSE,
  145:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****           HSE, HSI48 or PLL clock (through a configurable prescaler) on PA8/PA9/PB13 pins.
  146:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c **** 
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 4
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 4
 
 
  147:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****     [..] System, AHB and APB buses clocks configuration
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  201:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****   |-----------------|---------|--------|-----------------------------|-----------------------|
  202:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****   | Range 3 (1.2 V) | 4.2 MHz |   NA   |         8 MHz               |           4 MHz       |
  203:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****   |                 |         |        |                             | (PLLVCO max = 24 MHz) |
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 5
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 5
 
 
  204:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****   +------------------------------------------------------------------------------------------+
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  232:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****   /* Set MSION bit */
  233:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****   SET_BIT(RCC->CR, RCC_CR_MSION);
   53              		.loc 1 233 3 view .LVU6
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 6
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 6
 
 
   54 0014 1968     		ldr	r1, [r3]
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  255:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****       return HAL_TIMEOUT;
  256:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****     }
  257:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****   }
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 7
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 7
 
 
  258:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c **** 
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  312:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****   vl_mask |= RCC_CICR_CSSHSEC;
  313:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c **** #endif
  314:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****   WRITE_REG(RCC->CICR, vl_mask);
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 8
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 8
 
 
  315:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c **** 
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  124 0060 EAE7     		b	.L3
  125              	.LVL7:
  126              	.L13:
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 9
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 9
 
 
  260:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c **** 
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  167              	.LVL10:
  289:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c **** 
  168              		.loc 1 289 15 view .LVU44
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 10
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 10
 
 
  169 0096 0500     		movs	r5, r0
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  208 00ba 196D     		ldr	r1, [r3, #80]
  209 00bc 8022     		movs	r2, #128
  210 00be 1204     		lsls	r2, r2, #16
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 11
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 11
 
 
  211 00c0 0A43     		orrs	r2, r1
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  346:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****     return HAL_ERROR;
  347:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****   }
  348:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c **** 
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 12
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 12
 
 
  349:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****   /* Check the parameters */
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  403:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****       }
  404:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****     }
  405:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****   }
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 13
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 13
 
 
  406:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****   /*----------------------------- HSI Configuration --------------------------*/
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  460:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****         __HAL_RCC_HSI_CONFIG(hsi_state);
  461:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c **** 
  462:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****         /* Get Start Tick */
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 14
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 14
 
 
  463:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****         tickstart = HAL_GetTick();
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  517:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c **** 
  518:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c **** 
  519:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****         /* Update the SystemCoreClock global variable */
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 15
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 15
 
 
  520:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****         SystemCoreClock =  (32768U * (1UL << ((RCC_OscInitStruct->MSIClockRange >> RCC_ICSCR_MSIRAN
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  574:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****           {
  575:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****             return HAL_TIMEOUT;
  576:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****           }
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 16
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 16
 
 
  577:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****         }
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  631:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****     /* Update LSE configuration in Backup Domain control register    */
  632:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****     /* Requires to enable write access to Backup Domain of necessary */
  633:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****     if(__HAL_RCC_PWR_IS_CLK_DISABLED())
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 17
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 17
 
 
  634:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****     {
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  688:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c **** 
  689:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****     /* Require to disable power clock if necessary */
  690:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****     if(pwrclkchanged == SET)
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 18
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 18
 
 
  691:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****     {
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  745:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****   {
  746:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****     /* Check if the PLL is used as system clock or not */
  747:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****     if(sysclk_source != RCC_SYSCLKSOURCE_STATUS_PLLCLK)
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 19
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 19
 
 
  748:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****     {
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  802:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****           {
  803:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****             return HAL_TIMEOUT;
  804:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****           }
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 20
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 20
 
 
  805:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****         }
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  859:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****   uint32_t tickstart;
  860:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****   HAL_StatusTypeDef status;
  861:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c **** 
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 21
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 21
 
 
  862:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****   /* Check Null pointer */
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  916:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****     /* PLL is selected as System Clock Source */
  917:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****     else if(RCC_ClkInitStruct->SYSCLKSource == RCC_SYSCLKSOURCE_PLLCLK)
  918:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****     {
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 22
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 22
 
 
  919:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****       /* Check the PLL ready flag */
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  973:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****         {
  974:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****           return HAL_TIMEOUT;
  975:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****         }
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 23
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 23
 
 
  976:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****       }
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
 1030:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****   }
 1031:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c **** 
 1032:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****   return HAL_OK;
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 24
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 24
 
 
 1033:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c **** }
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
 1087:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****   *            @arg @ref RCC_MCO1SOURCE_HSE         HSE selected as MCO clock
 1088:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****   *            @arg @ref RCC_MCO1SOURCE_MSI         MSI oscillator clock selected as MCO clock
 1089:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****   *            @arg @ref RCC_MCO1SOURCE_PLLCLK      PLL clock selected as MCO clock
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 25
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 25
 
 
 1090:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****   *            @arg @ref RCC_MCO1SOURCE_LSI         LSI clock selected as MCO clock
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  263 000c 0021     		movs	r1, #0
  264              	.LVL18:
  265              		.loc 1 1120 20 view .LVU67
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 26
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 26
 
 
  266 000e 03A8     		add	r0, sp, #12
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  303 0030 0193     		str	r3, [sp, #4]
  304              		.loc 1 1137 5 view .LVU86
  305 0032 019B     		ldr	r3, [sp, #4]
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 27
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 27
 
 
  306              	.LBE2:
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
 1153:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****     gpio.Alternate = GPIO_AF0_MCO;
  334              		.loc 1 1153 5 is_stmt 1 view .LVU93
 1153:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****     gpio.Alternate = GPIO_AF0_MCO;
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 28
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 28
 
 
  335              		.loc 1 1153 20 is_stmt 0 view .LVU94
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
 1164:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c **** 
 1165:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c **** #if defined(RCC_HSECSS_SUPPORT)
 1166:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c **** /**
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 29
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 29
 
 
 1167:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****   * @brief  Enables the Clock Security System.
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  391              		.cfi_offset 14, -4
 1213:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****   uint32_t tmpreg, pllm, plld, pllvco, msiclkrange;    /* no init needed */
  392              		.loc 1 1213 3 view .LVU104
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 30
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 30
 
 
 1214:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****   uint32_t sysclockfreq;
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
 1251:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****           pllvco = (uint32_t)((((uint64_t)(HSI_VALUE >> 2)) * (uint64_t)pllm) / (uint64_t)plld);
 1252:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****         }
 1253:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****         else
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 31
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 31
 
 
 1254:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****         {
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
 1225:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****       }
  444              		.loc 1 1225 22 view .LVU123
  445 0032 1B48     		ldr	r0, .L31+4
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 32
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 32
 
 
  446 0034 F8E7     		b	.L22
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  486              		.loc 1 1245 68 view .LVU137
  487 0062 E1E7     		b	.L22
  488              	.LVL38:
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 33
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 33
 
 
  489              	.L26:
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  531 0096 C7E7     		b	.L22
  532              	.L29:
 1229:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****       }
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 34
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 34
 
 
  533              		.loc 1 1229 22 view .LVU150
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  344:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****   {
  581              		.loc 1 344 3 view .LVU159
  344:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****   {
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 35
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 35
 
 
  582              		.loc 1 344 5 is_stmt 0 view .LVU160
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  620              		.loc 1 373 7 view .LVU176
  373:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c **** 
  621              		.loc 1 373 7 view .LVU177
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 36
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 36
 
 
  622 0028 6368     		ldr	r3, [r4, #4]
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  664              		.loc 1 379 21 view .LVU189
  665 0062 0700     		movs	r7, r0
  666              	.LVL50:
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 37
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 37
 
 
  382:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****         {
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  706 008c 26E2     		b	.L130	@long jump
  707              	.LCB630:
  708              	.LVL53:
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 38
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 38
 
 
  709              	.L35:
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  746              		.loc 1 457 9 is_stmt 0 view .LVU221
  747 00ae 002B     		cmp	r3, #0
  748 00b0 00D1     		bne	.LCB672
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 39
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 39
 
 
  749 00b2 B0E0     		b	.L51	@long jump
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  790              	.L128:
  791              	.LBB5:
  373:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c **** 
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 40
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 40
 
 
  792              		.loc 1 373 7 is_stmt 1 discriminator 1 view .LVU235
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  398:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****           {
  835              		.loc 1 398 16 is_stmt 0 view .LVU247
  836 0112 FFF7FEFF 		bl	HAL_GetTick
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 41
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 41
 
 
  837              	.LVL63:
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  880 0148 1343     		orrs	r3, r2
  881              	.LVL66:
  441:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****       }
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 42
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 42
 
 
  882              		.loc 1 441 9 is_stmt 0 view .LVU259
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  500:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****     {
  922              		.loc 1 500 5 is_stmt 1 view .LVU274
  500:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****     {
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 43
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 43
 
 
  923              		.loc 1 500 7 is_stmt 0 view .LVU275
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  964              		.loc 1 520 108 view .LVU288
  965 01aa 0131     		adds	r1, r1, #1
  520:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****                            >> AHBPrescTable[((RCC->CFGR & RCC_CFGR_HPRE) >> RCC_CFGR_HPRE_Pos)];
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 44
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 44
 
 
  966              		.loc 1 520 36 view .LVU289
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  588:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****     {
  1006              		.loc 1 588 25 is_stmt 0 view .LVU304
  1007 01d8 6369     		ldr	r3, [r4, #20]
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 45
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 45
 
 
  588:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****     {
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  1048 0206 4B68     		ldr	r3, [r1, #4]
  1049 0208 484A     		ldr	r2, .L142+12
  1050 020a 1340     		ands	r3, r2
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 46
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 46
 
 
  1051 020c 2269     		ldr	r2, [r4, #16]
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  1092 023a 4DE1     		b	.L34
  1093              	.LVL81:
  1094              	.L57:
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 47
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 47
 
 
  534:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c **** 
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  1133              		.loc 1 550 20 view .LVU347
  1134 0266 0320     		movs	r0, #3
  1135 0268 36E1     		b	.L34
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 48
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 48
 
 
  1136              	.L133:
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  573:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****           {
  1179              		.loc 1 573 11 is_stmt 1 view .LVU359
  573:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****           {
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 49
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 49
 
 
  1180              		.loc 1 573 15 is_stmt 0 view .LVU360
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  1220              		.loc 1 616 11 view .LVU374
  1221 02cc 0228     		cmp	r0, #2
  1222 02ce F6D9     		bls	.L68
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 50
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 50
 
 
  618:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****         }
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  1263 02f4 1B68     		ldr	r3, [r3]
  639:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****     {
  1264              		.loc 1 639 7 view .LVU389
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 51
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 51
 
 
  1265 02f6 DB05     		lsls	r3, r3, #23
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  1312 034c 6B4A     		ldr	r2, .L144
  1313 034e 1168     		ldr	r1, [r2]
  1314 0350 8023     		movs	r3, #128
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 52
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 52
 
 
  1315 0352 5B00     		lsls	r3, r3, #1
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  1356 0380 A368     		ldr	r3, [r4, #8]
  660:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****     {
  1357              		.loc 1 660 7 discriminator 10 view .LVU410
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 53
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 53
 
 
  1358 0382 002B     		cmp	r3, #0
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  1399 03b2 0A40     		ands	r2, r1
  1400 03b4 1A65     		str	r2, [r3, #80]
  657:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c **** 
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 54
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 54
 
 
  1401              		.loc 1 657 5 discriminator 8 view .LVU424
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  682:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****         {
  1444              		.loc 1 682 11 view .LVU436
  1445 03ec 454B     		ldr	r3, .L144+8
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 55
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 55
 
 
  1446 03ee 9842     		cmp	r0, r3
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  1485 0414 FFF7FEFF 		bl	HAL_GetTick
  1486              	.LVL111:
  1487 0418 0400     		movs	r4, r0
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 56
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 56
 
 
  1488              	.LVL112:
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  1527              		.loc 1 757 9 view .LVU466
  1528 043c 304A     		ldr	r2, .L144+4
  1529 043e 1368     		ldr	r3, [r2]
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 57
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 57
 
 
  1530 0440 3349     		ldr	r1, .L144+20
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  1572 0476 CB60     		str	r3, [r1, #12]
  776:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c **** 
  1573              		.loc 1 776 9 view .LVU479
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 58
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 58
 
 
  1574 0478 0A68     		ldr	r2, [r1]
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  1615              	.LVL123:
  1616              	.L85:
  811:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****       {
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 59
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 59
 
 
  1617              		.loc 1 811 7 is_stmt 1 view .LVU493
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  1657 04d4 00E0     		b	.L34
  1658              	.LVL126:
  1659              	.L93:
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 60
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 60
 
 
  346:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****   }
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  1704 04f8 0120     		movs	r0, #1
  1705 04fa EDE7     		b	.L34
  1706              	.L145:
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 61
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 61
 
 
  1707              		.align	2
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  1754              		.loc 1 877 3 view .LVU526
  877:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****   {
  1755              		.loc 1 877 17 is_stmt 0 view .LVU527
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 62
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 62
 
 
  1756 000c 6A4B     		ldr	r3, .L198
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  1795              		.loc 1 917 12 is_stmt 0 view .LVU542
  1796 0038 032B     		cmp	r3, #3
  1797 003a 40D0     		beq	.L194
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 63
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 63
 
 
  926:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****     {
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  886:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****     {
  1838              		.loc 1 886 38 view .LVU557
  1839 0066 A342     		cmp	r3, r4
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 64
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 64
 
 
  1840 0068 D6D0     		beq	.L148
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  1881 0096 6B68     		ldr	r3, [r5, #4]
  948:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****     {
  1882              		.loc 1 948 7 view .LVU571
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 65
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 65
 
 
  1883 0098 022B     		cmp	r3, #2
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  1922              		.loc 1 920 9 view .LVU586
  1923 00c2 9201     		lsls	r2, r2, #6
  1924 00c4 DED4     		bmi	.L154
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 66
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 66
 
 
  922:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****       }
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  960:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****       {
  1965              		.loc 1 960 14 is_stmt 0 view .LVU601
  1966 00f2 324B     		ldr	r3, .L198+4
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 67
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 67
 
 
  1967 00f4 DA68     		ldr	r2, [r3, #12]
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  2007 0126 0320     		movs	r0, #3
  2008 0128 2AE0     		b	.L147
  2009              	.LVL151:
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 68
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 68
 
 
  2010              	.L152:
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  2051 015c 1343     		orrs	r3, r2
  2052 015e CB60     		str	r3, [r1, #12]
  2053              	.L171:
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 69
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 69
 
 
 1023:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c **** 
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  2095 018c 1360     		str	r3, [r2]
  997:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c **** 
  2096              		.loc 1 997 5 view .LVU642
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 70
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 70
 
 
  997:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c **** 
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  2138              	.L199:
  2139              		.align	2
  2140              	.L198:
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 71
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 71
 
 
  2141 01b8 00200240 		.word	1073881088
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  2184              		.code	16
  2185              		.thumb_func
  2187              	HAL_RCC_GetPCLK1Freq:
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 72
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 72
 
 
  2188              	.LFB46:
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  2232              	HAL_RCC_GetPCLK2Freq:
  2233              	.LFB47:
 1297:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c **** 
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 73
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 73
 
 
 1298:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c **** /**
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  2279              	.LFB48:
 1309:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c **** 
 1310:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c **** /**
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 74
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 74
 
 
 1311:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****   * @brief  Configures the RCC_OscInitStruct according to the internal
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
 1342:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****   }
 1343:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c **** 
 1344:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****   /* Get the HSI configuration -----------------------------------------------*/
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 75
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 75
 
 
 1345:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****   if((RCC->CR &RCC_CR_HSION) == RCC_CR_HSION)
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
 1366:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****   RCC_OscInitStruct->MSICalibrationValue = (uint32_t)((RCC->ICSCR & RCC_ICSCR_MSITRIM) >> RCC_ICSCR
  2336              		.loc 1 1366 3 is_stmt 1 view .LVU699
  2337              		.loc 1 1366 59 is_stmt 0 view .LVU700
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 76
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 76
 
 
  2338 0034 264B     		ldr	r3, .L224
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  2372              		.loc 1 1386 5 is_stmt 1 view .LVU715
  2373              		.loc 1 1386 33 is_stmt 0 view .LVU716
  2374 005a 0123     		movs	r3, #1
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 77
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 77
 
 
  2375 005c 4361     		str	r3, [r0, #20]
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  2407 007e C262     		str	r2, [r0, #44]
 1409:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****   RCC_OscInitStruct->PLL.PLLDIV = (uint32_t)(RCC->CFGR & RCC_CFGR_PLLDIV);
  2408              		.loc 1 1409 3 is_stmt 1 view .LVU730
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 78
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 78
 
 
  2409              		.loc 1 1409 49 is_stmt 0 view .LVU731
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  2451 00ac C2E7     		b	.L216
  2452              	.L217:
 1374:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****   {
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 79
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 79
 
 
  2453              		.loc 1 1374 8 is_stmt 1 view .LVU746
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  2499              	.LVL166:
  2500              	.LFB49:
 1411:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c **** 
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 80
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 80
 
 
 1412:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c **** /**
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  2533 0016 8260     		str	r2, [r0, #8]
 1434:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c **** 
 1435:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****   /* Get the APB1 configuration ----------------------------------------------*/
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 81
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 81
 
 
 1436:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_rcc.c ****   RCC_ClkInitStruct->APB1CLKDivider = (uint32_t)(RCC->CFGR & RCC_CFGR_PPRE1);
@@ -4856,43 +4856,43 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 1
  2579              		.file 9 "Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_gpio.h"
  2580              		.file 10 "Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal.h"
  2581              		.file 11 "<built-in>"
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s 			page 82
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s 			page 82
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32l0xx_hal_rcc.c
-C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s:19     .text.HAL_RCC_DeInit:0000000000000000 $t
-C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s:25     .text.HAL_RCC_DeInit:0000000000000000 HAL_RCC_DeInit
-C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s:219    .text.HAL_RCC_DeInit:00000000000000c8 $d
-C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s:231    .text.HAL_RCC_MCOConfig:0000000000000000 $t
-C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s:237    .text.HAL_RCC_MCOConfig:0000000000000000 HAL_RCC_MCOConfig
-C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s:367    .text.HAL_RCC_MCOConfig:0000000000000074 $d
-C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s:375    .text.HAL_RCC_GetSysClockFreq:0000000000000000 $t
-C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s:381    .text.HAL_RCC_GetSysClockFreq:0000000000000000 HAL_RCC_GetSysClockFreq
-C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s:542    .text.HAL_RCC_GetSysClockFreq:000000000000009c $d
-C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s:551    .text.HAL_RCC_OscConfig:0000000000000000 $t
-C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s:557    .text.HAL_RCC_OscConfig:0000000000000000 HAL_RCC_OscConfig
-C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s:1298   .text.HAL_RCC_OscConfig:0000000000000320 $d
-C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s:1312   .text.HAL_RCC_OscConfig:000000000000034c $t
-C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s:1709   .text.HAL_RCC_OscConfig:00000000000004fc $d
-C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s:1721   .text.HAL_RCC_ClockConfig:0000000000000000 $t
-C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s:1727   .text.HAL_RCC_ClockConfig:0000000000000000 HAL_RCC_ClockConfig
-C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s:2141   .text.HAL_RCC_ClockConfig:00000000000001b8 $d
-C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s:2153   .text.HAL_RCC_GetHCLKFreq:0000000000000000 $t
-C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s:2159   .text.HAL_RCC_GetHCLKFreq:0000000000000000 HAL_RCC_GetHCLKFreq
-C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s:2176   .text.HAL_RCC_GetHCLKFreq:0000000000000008 $d
-C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s:2181   .text.HAL_RCC_GetPCLK1Freq:0000000000000000 $t
-C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s:2187   .text.HAL_RCC_GetPCLK1Freq:0000000000000000 HAL_RCC_GetPCLK1Freq
-C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s:2220   .text.HAL_RCC_GetPCLK1Freq:0000000000000018 $d
-C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s:2226   .text.HAL_RCC_GetPCLK2Freq:0000000000000000 $t
-C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s:2232   .text.HAL_RCC_GetPCLK2Freq:0000000000000000 HAL_RCC_GetPCLK2Freq
-C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s:2265   .text.HAL_RCC_GetPCLK2Freq:0000000000000018 $d
-C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s:2271   .text.HAL_RCC_GetOscConfig:0000000000000000 $t
-C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s:2277   .text.HAL_RCC_GetOscConfig:0000000000000000 HAL_RCC_GetOscConfig
-C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s:2487   .text.HAL_RCC_GetOscConfig:00000000000000d0 $d
-C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s:2492   .text.HAL_RCC_GetClockConfig:0000000000000000 $t
-C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s:2498   .text.HAL_RCC_GetClockConfig:0000000000000000 HAL_RCC_GetClockConfig
-C:\Users\jarne\AppData\Local\Temp\ccHtz0sg.s:2565   .text.HAL_RCC_GetClockConfig:0000000000000038 $d
+C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s:19     .text.HAL_RCC_DeInit:0000000000000000 $t
+C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s:25     .text.HAL_RCC_DeInit:0000000000000000 HAL_RCC_DeInit
+C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s:219    .text.HAL_RCC_DeInit:00000000000000c8 $d
+C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s:231    .text.HAL_RCC_MCOConfig:0000000000000000 $t
+C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s:237    .text.HAL_RCC_MCOConfig:0000000000000000 HAL_RCC_MCOConfig
+C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s:367    .text.HAL_RCC_MCOConfig:0000000000000074 $d
+C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s:375    .text.HAL_RCC_GetSysClockFreq:0000000000000000 $t
+C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s:381    .text.HAL_RCC_GetSysClockFreq:0000000000000000 HAL_RCC_GetSysClockFreq
+C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s:542    .text.HAL_RCC_GetSysClockFreq:000000000000009c $d
+C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s:551    .text.HAL_RCC_OscConfig:0000000000000000 $t
+C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s:557    .text.HAL_RCC_OscConfig:0000000000000000 HAL_RCC_OscConfig
+C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s:1298   .text.HAL_RCC_OscConfig:0000000000000320 $d
+C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s:1312   .text.HAL_RCC_OscConfig:000000000000034c $t
+C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s:1709   .text.HAL_RCC_OscConfig:00000000000004fc $d
+C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s:1721   .text.HAL_RCC_ClockConfig:0000000000000000 $t
+C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s:1727   .text.HAL_RCC_ClockConfig:0000000000000000 HAL_RCC_ClockConfig
+C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s:2141   .text.HAL_RCC_ClockConfig:00000000000001b8 $d
+C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s:2153   .text.HAL_RCC_GetHCLKFreq:0000000000000000 $t
+C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s:2159   .text.HAL_RCC_GetHCLKFreq:0000000000000000 HAL_RCC_GetHCLKFreq
+C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s:2176   .text.HAL_RCC_GetHCLKFreq:0000000000000008 $d
+C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s:2181   .text.HAL_RCC_GetPCLK1Freq:0000000000000000 $t
+C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s:2187   .text.HAL_RCC_GetPCLK1Freq:0000000000000000 HAL_RCC_GetPCLK1Freq
+C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s:2220   .text.HAL_RCC_GetPCLK1Freq:0000000000000018 $d
+C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s:2226   .text.HAL_RCC_GetPCLK2Freq:0000000000000000 $t
+C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s:2232   .text.HAL_RCC_GetPCLK2Freq:0000000000000000 HAL_RCC_GetPCLK2Freq
+C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s:2265   .text.HAL_RCC_GetPCLK2Freq:0000000000000018 $d
+C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s:2271   .text.HAL_RCC_GetOscConfig:0000000000000000 $t
+C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s:2277   .text.HAL_RCC_GetOscConfig:0000000000000000 HAL_RCC_GetOscConfig
+C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s:2487   .text.HAL_RCC_GetOscConfig:00000000000000d0 $d
+C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s:2492   .text.HAL_RCC_GetClockConfig:0000000000000000 $t
+C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s:2498   .text.HAL_RCC_GetClockConfig:0000000000000000 HAL_RCC_GetClockConfig
+C:\Users\jarne\AppData\Local\Temp\ccTLqbA5.s:2565   .text.HAL_RCC_GetClockConfig:0000000000000038 $d
 
 UNDEFINED SYMBOLS
 HAL_GetTick

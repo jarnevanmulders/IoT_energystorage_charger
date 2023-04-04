@@ -10872,6 +10872,17 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <plain>
 <text x="99.06" y="83.82" size="1.27" layer="95">Low Forward Voltage Drop Diode (approx 0.3)</text>
 <text x="147.32" y="71.12" size="1.778" layer="95">0.596 V</text>
+<text x="162.56" y="126.365" size="1.778" layer="94">To create stable circuitry
+Additional diode in needed here
+512-SS24FL 40V 2A SCHOTTKY</text>
+<wire x1="160.02" y1="134.62" x2="160.02" y2="124.46" width="0.1524" layer="95"/>
+<wire x1="160.02" y1="124.46" x2="175.26" y2="124.46" width="0.1524" layer="95"/>
+<wire x1="175.26" y1="124.46" x2="200.66" y2="124.46" width="0.1524" layer="95"/>
+<wire x1="200.66" y1="124.46" x2="200.66" y2="134.62" width="0.1524" layer="95"/>
+<wire x1="200.66" y1="134.62" x2="160.02" y2="134.62" width="0.1524" layer="95"/>
+<wire x1="175.26" y1="113.03" x2="175.26" y2="124.46" width="0.1524" layer="95"/>
+<wire x1="173.99" y1="114.3" x2="175.26" y2="113.03" width="0.1524" layer="95"/>
+<wire x1="175.26" y1="113.03" x2="176.53" y2="114.3" width="0.1524" layer="95"/>
 </plain>
 <instances>
 <instance part="IC3" gate="G$1" x="127" y="106.68" smashed="yes">
@@ -11739,4 +11750,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </sheets>
 </schematic>
 </drawing>
+<compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
+</compatibility>
 </eagle>

@@ -32,7 +32,9 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 
-#define VREFINT_CAL_ADDR ((uint16_t*) ((uint32_t) 0x1FF80078))
+#define VREFINT_CAL_ADDR  ((uint16_t*) ((uint32_t) 0x1FF80078))
+#define MIN_VOLTAGE       5000
+#define MAX_VOLTAGE       22000
 
 /* USER CODE END PD */
 
@@ -54,13 +56,16 @@ static void MX_GPIO_Init(void);
 static void MX_ADC_Init(void);
 /* USER CODE BEGIN PFP */
 
-// *** PRINT functions *** //
-// void print_hex_uint16_t(uint16_t value);
-// void print_hex_buffer(uint8_t* buffer, uint8_t size);
+// *** Load switch functions *** //
+void load_switch_enable(void);
+void load_switch_disable(void);
 
-// *** ADC functions *** //
-void ADC_Select_CH_VREF(void);
-void ADC_Select_CH5(void);
+// *** Blocking led functions ***//
+void led_blink(uint16_t time_delay_1, uint16_t time_delay_2);
+
+// *** SAFELY ENABLE/DISABLE BUCK CONVERTER *** //
+void Enable_buck_converter(void);
+void Disable_buck_converter(void);
 
 /* USER CODE END PFP */
 
@@ -71,8 +76,13 @@ void ADC_Select_CH5(void);
   uint16_t supply_voltage_mv = 0;
   uint16_t input_voltage_mv = 0;
   uint16_t buck_output_voltage_mv = 0;
+  uint16_t buck_current_ma = 0;
+  uint8_t previous_state = 0;
 
-  // uint32_t reference = 0;
+  // State machine
+  typedef enum {INIT, START_CHARGING, CHARGING, STOP_CHARGING, OVER_VOLTAGE, SLEEP} State_type;
+  State_type current_state = INIT;
+
 
 /* USER CODE END 0 */
 
@@ -151,31 +161,138 @@ int main(void)
     // Calculate buck converter output voltage
     buck_output_voltage_mv = ADC_CH7*supply_voltage_mv/4096*71000/15000;
 
-    // Enable/disable PG if input voltage is lower than 25V
-    if(input_voltage_mv < 25000){
-      HAL_GPIO_WritePin(PG_GPIO_Port, PG_Pin, GPIO_PIN_SET);
+    // Calculate buck converter output current
+    buck_current_ma = ADC_CH6*supply_voltage_mv/4096*1000/900;
+
+
+    if(input_voltage_mv > MAX_VOLTAGE){
+      current_state = OVER_VOLTAGE;
     }
-    else{
-      HAL_GPIO_WritePin(PG_GPIO_Port, PG_Pin, GPIO_PIN_RESET);
+
+    
+    ///////////////////////////
+    // *** State machine *** //
+    ///////////////////////////
+
+    switch (current_state){
+      case INIT:
+        // Check input voltage before start charging
+        if(input_voltage_mv < MAX_VOLTAGE && input_voltage_mv > MIN_VOLTAGE){
+          current_state = START_CHARGING;
+        }
+
+        // Check input voltage in not below minimum voltage
+        if(input_voltage_mv < MIN_VOLTAGE){
+          current_state = SLEEP;
+        }
+
+        // Blink led
+        led_blink(500, 500);
+      break;
+      case START_CHARGING: 
+        // Enable buck conveter safely
+        Enable_buck_converter();
+
+        // Change state
+        current_state = CHARGING;
+      break;
+      case CHARGING:
+        led_blink(1000, 100);
+
+        // Protection, check every cycle
+        if(input_voltage_mv > MAX_VOLTAGE || input_voltage_mv < MIN_VOLTAGE){
+          current_state = STOP_CHARGING;
+        }
+
+        // TODO check for current lower then 0.2 A
+
+      break;
+      case STOP_CHARGING:
+        // Disable buck conveter safely
+        Disable_buck_converter();
+
+        current_state = INIT;
+        //current_state = SLEEP;
+      break;
+      case OVER_VOLTAGE:
+        led_blink(100, 100);
+
+        // Disable buck conveter safely
+        Disable_buck_converter();
+
+        // Check for save voltage
+        if(input_voltage_mv < MAX_VOLTAGE){
+          current_state = INIT;
+        }
+
+      break;
+      case SLEEP:
+
+        // Disable LED
+        HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
+        
+        // Disable the systick interrupt
+        HAL_SuspendTick();
+
+        // Enter Stop Mode
+        HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON, PWR_STOPENTRY_WFI);
+
+        // Change state
+        current_state = INIT;
+
+      break;
+      default:
+      current_state = INIT;
+      break;
     }
 
-    // Enable/disable buck converter
-    // HAL_GPIO_WritePin(BUCK_EN_GPIO_Port, BUCK_EN_Pin, GPIO_PIN_RESET);
-    HAL_GPIO_WritePin(BUCK_EN_GPIO_Port, BUCK_EN_Pin, GPIO_PIN_SET);
 
-    // Enable/disable load switch 1
-    // HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, GPIO_PIN_RESET);
-    HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, GPIO_PIN_SET);
+    // // Enable/disable PG if input voltage is lower than 25V
+    // if(input_voltage_mv < 25000 && input_voltage_mv > 5000){
+      
+    //   // Enable load switches
+    //   load_switch_enable();
 
-    // Enable/disable load switch 2
-    // HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, GPIO_PIN_RESET);
+    //   HAL_Delay(100);
+
+    //   // Enable CC/CV buck converter
+    //   HAL_GPIO_WritePin(BUCK_EN_GPIO_Port, BUCK_EN_Pin, GPIO_PIN_SET);
+
+    //   // HAL_Delay(1000);
+
+    //   // Connect input voltage to buck converter
+    //   HAL_GPIO_WritePin(PG_GPIO_Port, PG_Pin, GPIO_PIN_SET);
+    // }
+    // else{
+    //   // Disable CC/CV buck converter
+    //   HAL_GPIO_WritePin(BUCK_EN_GPIO_Port, BUCK_EN_Pin, GPIO_PIN_RESET);
+      
+    //   // Disconnect input voltage from buck converter
+    //   HAL_GPIO_WritePin(PG_GPIO_Port, PG_Pin, GPIO_PIN_RESET);
+
+    //   // Disable load switches
+    //   load_switch_disable();
+    // }
+
+    // // Enable/disable buck converter
+    // // HAL_GPIO_WritePin(BUCK_EN_GPIO_Port, BUCK_EN_Pin, GPIO_PIN_RESET);
+    // HAL_GPIO_WritePin(BUCK_EN_GPIO_Port, BUCK_EN_Pin, GPIO_PIN_SET);
+
+    // // Enable/disable load switch 1
+    // // HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, GPIO_PIN_RESET);
+    // HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, GPIO_PIN_SET);
+
+    // // Enable/disable load switch 2
+    // // HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, GPIO_PIN_RESET);
     // HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, GPIO_PIN_SET);
 
+    // // Led blink
+    // led_blink(500);
 
-    HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
-    HAL_Delay(100);
-    HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
-    HAL_Delay(100);
+    // HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
+    // HAL_Delay(250);
+    // HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
+    // HAL_Delay(250);
 
   }
   /* USER CODE END 3 */
@@ -366,18 +483,63 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 
-// *** PRINT functions *** //
-// void print_hex_uint16_t(uint16_t value){
-// 	uint8_t buffer [2];
-// 	buffer [0] = (uint8_t)(value >> 8);
-// 	buffer [1] = (uint8_t)value;
-// 	print_hex_buffer(buffer, 2);
-// }
+// *** Load Switch functions *** //
+// Enable load switch 1 and 2
+void load_switch_enable(void){
+  HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, GPIO_PIN_SET);
+}
 
-// void print_hex_buffer(uint8_t* buffer, uint8_t size){
-// 		HAL_UART_Transmit(&huart2, buffer, size, 100);
-// }
+// Disable load switch 1 and 2
+void load_switch_disable(void){
+  HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, GPIO_PIN_RESET);
+}
 
+void led_blink(uint16_t time_delay_1, uint16_t time_delay_2){
+  HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
+  HAL_Delay(time_delay_1);
+  HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
+  HAL_Delay(time_delay_2);
+}
+
+// *** WAKE UP *** //
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+  //if(GPIO_Pin == INT_Pin)
+  //{
+	  SystemClock_Config();
+	  HAL_ResumeTick();
+  //}
+}
+
+// *** SAFELY ENABLE/DISABLE BUCK CONVERTER *** //
+void Enable_buck_converter(void){
+  // Enable load switches
+  load_switch_enable();
+
+  HAL_Delay(100);
+
+  // Enable CC/CV buck converter
+  HAL_GPIO_WritePin(BUCK_EN_GPIO_Port, BUCK_EN_Pin, GPIO_PIN_SET);
+
+  // HAL_Delay(1000);
+
+  // Connect input voltage to buck converter
+  HAL_GPIO_WritePin(PG_GPIO_Port, PG_Pin, GPIO_PIN_SET);
+}
+
+
+void Disable_buck_converter(void){
+    // Disable CC/CV buck converter
+  HAL_GPIO_WritePin(BUCK_EN_GPIO_Port, BUCK_EN_Pin, GPIO_PIN_RESET);
+  
+  // Disconnect input voltage from buck converter
+  HAL_GPIO_WritePin(PG_GPIO_Port, PG_Pin, GPIO_PIN_RESET);
+
+  // Disable load switches
+  load_switch_disable();
+}
 
 /* USER CODE END 4 */
 

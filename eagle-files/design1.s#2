@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.6.2">
+<eagle version="9.5.1">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -10802,8 +10802,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="C2" library="microbuilder" deviceset="CAP_CERAMIC" device="0603" value="10u"/>
 <part name="D1" library="microbuilder" deviceset="DIODE" device="SOD-523" value="SDM03U40"/>
 <part name="D2" library="microbuilder" deviceset="DIODE" device="SOD-523" value="SDM03U40"/>
-<part name="R11" library="microbuilder" deviceset="RESISTOR" device="0603"/>
-<part name="R12" library="microbuilder" deviceset="RESISTOR" device="0603" value="100k"/>
+<part name="R11" library="microbuilder" deviceset="RESISTOR" device="0603" value="56k"/>
+<part name="R12" library="microbuilder" deviceset="RESISTOR" device="0603" value="15k"/>
 <part name="GND12" library="supply1" deviceset="GND" device=""/>
 <part name="C16" library="microbuilder" deviceset="CAP_CERAMIC" device="0603" value="100p"/>
 <part name="GND17" library="supply1" deviceset="GND" device=""/>
@@ -10849,8 +10849,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="U$4" library="microbuilder" deviceset="3.3V" device=""/>
 <part name="Q1" library="microbuilder" deviceset="MOSFET-N" device="REFLOW" value="BSS138"/>
 <part name="GND13" library="supply1" deviceset="GND" device=""/>
-<part name="R8" library="microbuilder" deviceset="RESISTOR" device="0603" value="100k"/>
-<part name="R9" library="microbuilder" deviceset="RESISTOR" device="0603" value="1k"/>
+<part name="R8" library="microbuilder" deviceset="RESISTOR" device="0603" value="220k"/>
+<part name="R9" library="microbuilder" deviceset="RESISTOR" device="0603" value="4k7"/>
 <part name="GND14" library="supply1" deviceset="GND" device=""/>
 <part name="X1" library="degson" deviceset="DG3XX-02" device="-5.0"/>
 <part name="GND15" library="supply1" deviceset="GND" device=""/>
@@ -10872,6 +10872,17 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <plain>
 <text x="99.06" y="83.82" size="1.27" layer="95">Low Forward Voltage Drop Diode (approx 0.3)</text>
 <text x="147.32" y="71.12" size="1.778" layer="95">0.596 V</text>
+<text x="162.56" y="126.365" size="1.778" layer="94">To create stable circuitry
+Additional diode in needed here
+512-SS24FL 40V 2A SCHOTTKY</text>
+<wire x1="160.02" y1="134.62" x2="160.02" y2="124.46" width="0.1524" layer="95"/>
+<wire x1="160.02" y1="124.46" x2="175.26" y2="124.46" width="0.1524" layer="95"/>
+<wire x1="175.26" y1="124.46" x2="200.66" y2="124.46" width="0.1524" layer="95"/>
+<wire x1="200.66" y1="124.46" x2="200.66" y2="134.62" width="0.1524" layer="95"/>
+<wire x1="200.66" y1="134.62" x2="160.02" y2="134.62" width="0.1524" layer="95"/>
+<wire x1="175.26" y1="113.03" x2="175.26" y2="124.46" width="0.1524" layer="95"/>
+<wire x1="173.99" y1="114.3" x2="175.26" y2="113.03" width="0.1524" layer="95"/>
+<wire x1="175.26" y1="113.03" x2="176.53" y2="114.3" width="0.1524" layer="95"/>
 </plain>
 <instances>
 <instance part="IC3" gate="G$1" x="127" y="106.68" smashed="yes">
@@ -11739,4 +11750,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </sheets>
 </schematic>
 </drawing>
+<compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
+</compatibility>
 </eagle>

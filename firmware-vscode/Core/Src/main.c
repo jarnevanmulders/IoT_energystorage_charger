@@ -35,6 +35,8 @@
 #define VREFINT_CAL_ADDR  ((uint16_t*) ((uint32_t) 0x1FF80078))
 #define MIN_VOLTAGE       5000
 #define MAX_VOLTAGE       22000
+#define MIN_CURRENT       200
+#define SLEEP_VOLTAGE     1000
 
 /* USER CODE END PD */
 
@@ -78,6 +80,7 @@ void Disable_buck_converter(void);
   uint16_t buck_output_voltage_mv = 0;
   uint16_t buck_current_ma = 0;
   uint8_t previous_state = 0;
+  uint16_t timer_check = 0;
 
   // State machine
   typedef enum {INIT, START_CHARGING, CHARGING, STOP_CHARGING, OVER_VOLTAGE, SLEEP} State_type;
@@ -162,7 +165,7 @@ int main(void)
     buck_output_voltage_mv = ADC_CH7*supply_voltage_mv/4096*71000/15000;
 
     // Calculate buck converter output current
-    buck_current_ma = ADC_CH6*supply_voltage_mv/4096*1000/900;
+    buck_current_ma = ADC_CH6*supply_voltage_mv/4096*1000/780;
 
 
     if(input_voltage_mv > MAX_VOLTAGE){
@@ -182,7 +185,7 @@ int main(void)
         }
 
         // Check input voltage in not below minimum voltage
-        if(input_voltage_mv < MIN_VOLTAGE){
+        if(input_voltage_mv < SLEEP_VOLTAGE){
           current_state = SLEEP;
         }
 
@@ -197,22 +200,32 @@ int main(void)
         current_state = CHARGING;
       break;
       case CHARGING:
-        led_blink(1000, 100);
+        led_blink(900, 100);
 
         // Protection, check every cycle
         if(input_voltage_mv > MAX_VOLTAGE || input_voltage_mv < MIN_VOLTAGE){
           current_state = STOP_CHARGING;
         }
 
-        // TODO check for current lower then 0.2 A
+        // Check for current lower then MIN_CURRENT after 10 sec
+        if(buck_current_ma < MIN_CURRENT && timer_check > 10){
+          timer_check = 0;
+          current_state = STOP_CHARGING;
+        }
+
+        timer_check++;
 
       break;
       case STOP_CHARGING:
         // Disable buck conveter safely
         Disable_buck_converter();
 
-        current_state = INIT;
-        //current_state = SLEEP;
+        if(buck_current_ma < MIN_CURRENT){
+          current_state = SLEEP;
+        }
+        else{
+          current_state = INIT;
+        }
       break;
       case OVER_VOLTAGE:
         led_blink(100, 100);
@@ -224,12 +237,13 @@ int main(void)
         if(input_voltage_mv < MAX_VOLTAGE){
           current_state = INIT;
         }
-
       break;
       case SLEEP:
 
         // Disable LED
         HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
+
+        // Check if input voltage is above 2 V and enable timer interrupt
         
         // Disable the systick interrupt
         HAL_SuspendTick();
@@ -245,54 +259,6 @@ int main(void)
       current_state = INIT;
       break;
     }
-
-
-    // // Enable/disable PG if input voltage is lower than 25V
-    // if(input_voltage_mv < 25000 && input_voltage_mv > 5000){
-      
-    //   // Enable load switches
-    //   load_switch_enable();
-
-    //   HAL_Delay(100);
-
-    //   // Enable CC/CV buck converter
-    //   HAL_GPIO_WritePin(BUCK_EN_GPIO_Port, BUCK_EN_Pin, GPIO_PIN_SET);
-
-    //   // HAL_Delay(1000);
-
-    //   // Connect input voltage to buck converter
-    //   HAL_GPIO_WritePin(PG_GPIO_Port, PG_Pin, GPIO_PIN_SET);
-    // }
-    // else{
-    //   // Disable CC/CV buck converter
-    //   HAL_GPIO_WritePin(BUCK_EN_GPIO_Port, BUCK_EN_Pin, GPIO_PIN_RESET);
-      
-    //   // Disconnect input voltage from buck converter
-    //   HAL_GPIO_WritePin(PG_GPIO_Port, PG_Pin, GPIO_PIN_RESET);
-
-    //   // Disable load switches
-    //   load_switch_disable();
-    // }
-
-    // // Enable/disable buck converter
-    // // HAL_GPIO_WritePin(BUCK_EN_GPIO_Port, BUCK_EN_Pin, GPIO_PIN_RESET);
-    // HAL_GPIO_WritePin(BUCK_EN_GPIO_Port, BUCK_EN_Pin, GPIO_PIN_SET);
-
-    // // Enable/disable load switch 1
-    // // HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, GPIO_PIN_RESET);
-    // HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, GPIO_PIN_SET);
-
-    // // Enable/disable load switch 2
-    // // HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, GPIO_PIN_RESET);
-    // HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, GPIO_PIN_SET);
-
-    // // Led blink
-    // led_blink(500);
-
-    // HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
-    // HAL_Delay(250);
-    // HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
-    // HAL_Delay(250);
 
   }
   /* USER CODE END 3 */

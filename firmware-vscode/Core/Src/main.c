@@ -32,11 +32,12 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 
-#define VREFINT_CAL_ADDR  ((uint16_t*) ((uint32_t) 0x1FF80078))
-#define MIN_VOLTAGE       5000
-#define MAX_VOLTAGE       22000
-#define MIN_CURRENT       200
-#define SLEEP_VOLTAGE     1000
+#define VREFINT_CAL_ADDR          ((uint16_t*) ((uint32_t) 0x1FF80078))
+#define MIN_VOLTAGE               5000
+#define MAX_VOLTAGE               22000
+#define MIN_CURRENT               200
+#define SLEEP_VOLTAGE             1000
+#define CHARGE_VOLTAGE_THESHOLD   2600
 
 /* USER CODE END PD */
 
@@ -179,6 +180,9 @@ int main(void)
 
     switch (current_state){
       case INIT:
+        // No charging may occur in the INIT phase
+        Disable_buck_converter();
+
         // Check input voltage before start charging
         if(input_voltage_mv < MAX_VOLTAGE && input_voltage_mv > MIN_VOLTAGE){
           current_state = START_CHARGING;
@@ -202,13 +206,13 @@ int main(void)
       case CHARGING:
         led_blink(900, 100);
 
-        // Protection, check every cycle
-        if(input_voltage_mv > MAX_VOLTAGE || input_voltage_mv < MIN_VOLTAGE){
-          current_state = STOP_CHARGING;
+        // If under voltage occur, wait for enough voltage to resume
+        if(input_voltage_mv < MIN_VOLTAGE){
+          current_state = INIT;
         }
 
         // Check for current lower then MIN_CURRENT after 10 sec
-        if(buck_current_ma < MIN_CURRENT && timer_check > 10){
+        if(buck_current_ma < MIN_CURRENT && timer_check > 10 && supply_voltage_mv > CHARGE_VOLTAGE_THESHOLD){
           timer_check = 0;
           current_state = STOP_CHARGING;
         }

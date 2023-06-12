@@ -187,6 +187,7 @@ int main(void)
         // Check input voltage before start charging
         if(input_voltage_mv < MAX_VOLTAGE && input_voltage_mv > MIN_VOLTAGE){
           current_state = START_CHARGING;
+          break;
         }
 
         // Check input voltage in not below minimum voltage
@@ -198,7 +199,7 @@ int main(void)
         led_blink(500, 500);
       break;
       case START_CHARGING: 
-        // Enable buck conveter safely
+        // Enable buck converter safely
         Enable_buck_converter();
 
         // Change state
@@ -207,9 +208,10 @@ int main(void)
       case CHARGING:
         led_blink(900, 100);
 
-        // If under voltage occur, wait for enough voltage to resume
+        // If under voltage occurs, wait for enough voltage to resume
         if(input_voltage_mv < MIN_VOLTAGE){
           current_state = INIT;
+          break;
         }
 
         // Check for current lower then MIN_CURRENT after 10 sec
@@ -543,8 +545,6 @@ void Enable_buck_converter(void){
 
   // Enable CC/CV buck converter
   HAL_GPIO_WritePin(BUCK_EN_GPIO_Port, BUCK_EN_Pin, GPIO_PIN_SET);
-
-  // HAL_Delay(1000);
 
   // Connect input voltage to buck converter
   HAL_GPIO_WritePin(PG_GPIO_Port, PG_Pin, GPIO_PIN_SET);

@@ -30,7 +30,7 @@ void loop() {
 
   delay(5000);
 
-    digitalWrite(10, LOW);            // set the SS pin to LOW
+  digitalWrite(10, LOW);            // set the SS pin to LOW
 
   SPI.transfer(0x00);             // send a write command to the MCP4131 to write at registry address 0x00
   SPI.transfer(0);              // send a new wiper value

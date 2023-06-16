@@ -53,7 +53,8 @@ Core/Src/system_stm32l0xx.c \
 Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_adc.c \
 Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_adc_ex.c \
 Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_uart.c \
-Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_uart_ex.c
+Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_uart_ex.c \
+Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_spi.c
 
 # ASM sources
 ASM_SOURCES =  \

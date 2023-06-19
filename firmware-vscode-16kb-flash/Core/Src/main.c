@@ -37,7 +37,7 @@
 #define MAX_VOLTAGE               22000
 #define MIN_CURRENT               200
 #define SLEEP_VOLTAGE             1000
-#define CHARGE_VOLTAGE_THESHOLD   2600
+#define MIN_CHARGE_CUTTOF_VOLTAGE 2600
 
 /* USER CODE END PD */
 
@@ -72,12 +72,18 @@ static void MX_TIM2_Init(void);
 void load_switch_enable(void);
 void load_switch_disable(void);
 
-// *** Blocking led functions ***//
+// *** Blocking led functions *** //
 void led_blink(uint16_t time_delay_1, uint16_t time_delay_2);
+
+// *** Non blocking led functios *** //
+void led_blink_nb(uint16_t time_delay_1, uint16_t time_delay_2);
 
 // *** SAFELY ENABLE/DISABLE BUCK CONVERTER *** //
 void Enable_buck_converter(void);
 void Disable_buck_converter(void);
+
+// *** Calculate CRC *** //
+uint8_t calculate_crc_xor(const uint8_t *data, size_t length);
 
 /* USER CODE END PFP */
 
@@ -91,6 +97,13 @@ uint16_t buck_output_voltage_mv = 0;
 uint16_t buck_current_ma = 0;
 uint8_t previous_state = 0;
 uint16_t timer_check = 0;
+
+// Non blocking blink  
+uint8_t isOn;
+uint32_t timestamp;
+
+// Send message
+uint8_t send_status = 1;
 
 // Buffer keeping SPI commands to change resistance of programmable potentiometer 
 uint8_t spi_buffer [2] = {0, 0};
@@ -135,7 +148,11 @@ int main(void)
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
 
+  // Calibrate ADC
   HAL_ADCEx_Calibration_Start(&hadc, ADC_SINGLE_ENDED);
+
+  // Start timer
+  HAL_TIM_Base_Start_IT(&htim2);
 
   /* USER CODE END 2 */
 
@@ -146,6 +163,9 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+
+    // Delay (prevent sampling ADC to quickly)
+    HAL_Delay(100);
 
     // Start ADC Conversion and read two ADC values
 		HAL_ADC_Start(&hadc);
@@ -213,7 +233,7 @@ int main(void)
         HAL_GPIO_WritePin(SC_GPIO_Port, SC_Pin, GPIO_PIN_SET);
 
         // Blink led
-        led_blink(500, 500);
+        led_blink_nb(500, 500);
       break;
       case START_CHARGING: 
         // Enable buck converter safely
@@ -223,7 +243,7 @@ int main(void)
         current_state = CHARGING;
       break;
       case CHARGING:
-        led_blink(900, 100);
+        led_blink_nb(100, 900);
 
         // If under voltage occurs, wait for enough voltage to resume
         if(input_voltage_mv < MIN_VOLTAGE){
@@ -232,7 +252,7 @@ int main(void)
         }
 
         // Check for current lower then MIN_CURRENT after 10 sec
-        if(buck_current_ma < MIN_CURRENT && timer_check > 10 && supply_voltage_mv > CHARGE_VOLTAGE_THESHOLD){
+        if(buck_current_ma < MIN_CURRENT && timer_check > 10 && supply_voltage_mv > MIN_CHARGE_CUTTOF_VOLTAGE){
           timer_check = 0;
           current_state = STOP_CHARGING;
         }
@@ -249,15 +269,18 @@ int main(void)
         // Disable buck conveter safely
         Disable_buck_converter();
 
-        if(buck_current_ma < MIN_CURRENT){
-          current_state = SLEEP;
-        }
-        else{
-          current_state = INIT;
-        }
+        // SEND MESSAGE TO TRANSMITTER
+
+        // if(buck_current_ma < MIN_CURRENT && supply_voltage_mv > MIN_CHARGE_CUTTOF_VOLTAGE){
+        //   current_state = SLEEP;
+        // }
+        // else{
+        //   current_state = INIT;
+        // }
+        current_state = SLEEP;
       break;
       case OVER_VOLTAGE:
-        led_blink(100, 100);
+        led_blink_nb(100, 100);
 
         // Disable buck conveter safely
         Disable_buck_converter();
@@ -296,19 +319,23 @@ int main(void)
       break;
     }
 
-    uint8_t length = 10;
-    uint8_t buffer [length];
-    buffer [0] = 0x02;
-    buffer [1] = length;
-    buffer [2] = (input_voltage_mv >> 8);
-    buffer [3] = (uint8_t)(input_voltage_mv);
-    buffer [4] = (buck_output_voltage_mv >> 8);
-    buffer [5] = (uint8_t)(buck_output_voltage_mv);
-    buffer [6] = (buck_current_ma >> 8);
-    buffer [7] = (uint8_t)(buck_current_ma);
-    buffer [8] = (supply_voltage_mv >> 8);
-    buffer [9] = (uint8_t)(supply_voltage_mv);
-    HAL_UART_Transmit(&huart2, buffer, length, 100);
+    if(send_status){
+      send_status = 0;
+      uint8_t length = 11;
+      uint8_t buffer [length];
+      buffer [0] = 0x02;
+      buffer [1] = length;
+      buffer [2] = (input_voltage_mv >> 8);
+      buffer [3] = (uint8_t)(input_voltage_mv);
+      buffer [4] = (buck_output_voltage_mv >> 8);
+      buffer [5] = (uint8_t)(buck_output_voltage_mv);
+      buffer [6] = (buck_current_ma >> 8);
+      buffer [7] = (uint8_t)(buck_current_ma);
+      buffer [8] = (supply_voltage_mv >> 8);
+      buffer [9] = (uint8_t)(supply_voltage_mv);
+      buffer [10] = calculate_crc_xor(buffer, length-1);//0xFF;
+      HAL_UART_Transmit(&huart2, buffer, length, 100);
+    }
 
   }
   /* USER CODE END 3 */
@@ -503,7 +530,7 @@ static void MX_TIM2_Init(void)
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim2.Init.Period = 1000;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
-  htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
   if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
   {
     Error_Handler();
@@ -635,6 +662,24 @@ void led_blink(uint16_t time_delay_1, uint16_t time_delay_2){
   HAL_Delay(time_delay_2);
 }
 
+void led_blink_nb(uint16_t time_delay_1, uint16_t time_delay_2){
+  uint32_t currentTime = HAL_GetTick();  // Get current timestamp (implementation-dependent)
+
+  if (isOn) {
+    if (currentTime - timestamp >= time_delay_1) {
+      isOn = 0;
+      timestamp = currentTime;
+      HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
+    }
+  } else {
+    if (currentTime - timestamp >= time_delay_2) {
+      isOn = 1;
+      timestamp = currentTime;
+      HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
+    }
+  }
+}
+
 // *** WAKE UP *** //
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
@@ -669,6 +714,24 @@ void Disable_buck_converter(void){
 
   // Disable load switches
   load_switch_disable();
+}
+
+// *** TIMER INTEGRATION *** //
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim){
+  send_status = 1;
+}
+
+
+// *** Calculate CRC *** //
+uint8_t calculate_crc_xor(const uint8_t *data, size_t length) {
+    uint8_t crc = 0;
+    size_t i;
+
+    for (i = 0; i < length; i++) {
+        crc ^= data[i];
+    }
+
+    return crc;
 }
 
 /* USER CODE END 4 */

@@ -118,14 +118,22 @@ uint8_t send_status = 1;
 
 // PID result
 uint16_t pid_result;
+uint16_t pid_setpoint = 0;
 uint8_t check = 0;
 int32_t control_signal = PID_UPPER_THRESHOLD;
+int32_t prev_control_signal = PID_UPPER_THRESHOLD;
+
+int32_t integral = PID_UPPER_THRESHOLD*1000;     // Integral term accumulator
+// uint32_t integral_2 = 0;     // Integral term accumulator
+int32_t prev_error = 0;   // Previous error for derivative term
+uint8_t last_stable_PID_value;
+uint16_t last_stable_voltage;
 
 // Buffer keeping SPI commands to change resistance of programmable potentiometer 
 uint8_t spi_buffer [2] = {0, 0};
 
 // State machine
-typedef enum {INIT, START_CHARGING, CHARGING, STOP_CHARGING, OVER_VOLTAGE, SLEEP} State_type;
+typedef enum {INIT, START_CHARGING, CHARGING_PID, CHARGING_NO_PID, STOP_CHARGING, OVER_VOLTAGE, SLEEP} State_type;
 State_type current_state = INIT;
 
 /* USER CODE END 0 */
@@ -232,7 +240,7 @@ int main(void)
 
     // Check input voltage in not below minimum voltage
     if(input_voltage_mv < SLEEP_VOLTAGE){
-      current_state = STOP_CHARGING;
+      current_state = SLEEP;
     }
 
     switch (current_state){
@@ -241,7 +249,11 @@ int main(void)
         Disable_buck_converter();
 
         // Reset PID result
+        pid_result = PID_UPPER_THRESHOLD;
         control_signal = PID_UPPER_THRESHOLD;
+        prev_control_signal = PID_UPPER_THRESHOLD;
+        integral = PID_UPPER_THRESHOLD*1000;
+        prev_error = 0;
 
         // Check input voltage before start charging
         if(input_voltage_mv < MAX_VOLTAGE && input_voltage_mv > MIN_VOLTAGE){
@@ -257,9 +269,9 @@ int main(void)
         Enable_buck_converter();
 
         // Change state
-        current_state = CHARGING;
+        current_state = CHARGING_PID;
       break;
-      case CHARGING:
+      case CHARGING_PID:
         // Blink led
         led_blink_nb(100, 900);
         
@@ -276,6 +288,17 @@ int main(void)
         // If under voltage occurs, wait for enough voltage to resume
         if(input_voltage_mv < MIN_VOLTAGE){
           current_state = INIT;
+          
+          // // Not enough power at the receiver - keep last stable PID value
+          // last_stable_PID_value = pid_result + 2;
+          // last_stable_voltage = input_voltage_mv;
+
+          // // Compensate programmable potentiometer
+          // change_potentiometer(last_stable_PID_value);
+
+          // // No PID
+          // current_state = CHARGING_NO_PID;
+
           break;
         }
 
@@ -288,12 +311,28 @@ int main(void)
         timer_check++;
 
       break;
+      // case CHARGING_NO_PID:
+
+      //   // Blink led
+      //   led_blink_nb(100, 900);
+
+      //   int16_t num = last_stable_voltage - input_voltage_mv;
+      //   if(num < 0){
+      //     num = -num;
+      //   }
+      //   if(num > 1000){
+      //     current_state = INIT;
+      //   }
+
+      // break;
       case STOP_CHARGING:
         // Disable buck conveter safely
         Disable_buck_converter();
 
         // Reset PID result
+        pid_result = PID_UPPER_THRESHOLD;
         control_signal = PID_UPPER_THRESHOLD;
+        prev_control_signal = PID_UPPER_THRESHOLD;
 
         // SEND MESSAGE TO TRANSMITTER
 
@@ -761,8 +800,125 @@ uint8_t calculate_crc_xor(const uint8_t *data, size_t length) {
     return crc;
 }
 
+// PID Controller Variables
+// int32_t integral = PID_UPPER_THRESHOLD*1000;     // Integral term accumulator
+// // uint32_t integral_2 = 0;     // Integral term accumulator
+// int32_t prev_error = 0;   // Previous error for derivative term
+// uint16_t prev_error_2 = 0; 
+
+uint16_t kp = 5;  // Proportional gain (Scaled by 100)
+uint16_t ki = 100;  // Integral gain (Scaled by 100)
+uint16_t kd = 10;  // Derivative gain (Scaled by 100)
+
+
 // *** PID controller *** //
+// uint16_t pid_controller(uint16_t measured_value){
+//   if(measured_value < PID_SETPOINT){
+//     uint16_t error = (PID_SETPOINT - measured_value)/1000;
+//     if(error == 0)  { }//control_signal++;                             }
+//     else            { control_signal = control_signal + error; }
+//     if(control_signal > PID_UPPER_THRESHOLD){
+//       control_signal = PID_UPPER_THRESHOLD;
+//     }
+//   }
+//   if(measured_value > PID_SETPOINT){
+//     uint8_t error = (measured_value - PID_SETPOINT)/1000;
+//     if(control_signal > error + PID_UNDER_THRESHOLD){
+//       if(error == 0)  { }//control_signal--;                         }
+//       else            { control_signal = control_signal - error;  }
+//     }
+//     else{
+//       control_signal = PID_UNDER_THRESHOLD;
+//     }
+//   }
 uint16_t pid_controller(uint16_t measured_value){
+  // if(measured_value < PID_SETPOINT){
+  //   uint16_t error = (PID_SETPOINT - measured_value);
+  //   prev_error_1 = error;
+  //   if(error == 0)  { }//control_signal++;                             }
+  //   else            { 
+  //     // Proportional term
+  //     int p_term = (kp * error) / 1000;
+
+  //     // Integral term
+  //     integral_1 += (ki * error) / 1000;
+
+  //     // Derivative term
+  //     int d_term = (kd * (error - prev_error_1)) / 1000;
+  //     control_signal = p_term + integral_1 + d_term;
+  //   }
+  //   if(control_signal > PID_UPPER_THRESHOLD){
+  //     control_signal = PID_UPPER_THRESHOLD;
+  //   }
+  // }
+  // if(measured_value > PID_SETPOINT){
+  //   uint16_t error = (measured_value - PID_SETPOINT);
+  //   prev_error_2 = error;
+  //   if(control_signal > error + PID_UNDER_THRESHOLD){
+  //     if(error == 0)  { }//control_signal--;                         }
+  //     else            { 
+  //       // Proportional term
+  //       int p_term = (kp * error) / 1000;
+
+  //       // Integral term
+  //       integral_2 += (ki * error) / 1000;
+
+  //       // Derivative term
+  //       int d_term = (kd * (error - prev_error_1)) / 1000;
+  //       control_signal = p_term + integral_2 + d_term;  
+  //     }
+  //   }
+  //   else{
+  //     control_signal = PID_UNDER_THRESHOLD;
+  //   }
+  // }
+  // return control_signal;
+
+// V2
+  // if(measured_value < PID_SETPOINT){
+  //   pid_setpoint = measured_value + 500;
+  // }
+  // else{
+  //   pid_setpoint = PID_SETPOINT;
+  // }
+
+  // int32_t error = pid_setpoint - measured_value;
+
+  // // Proportional term
+  // int32_t p_term = (kp * error) / 100;
+
+  // // Integral term
+  // integral += (ki * error) / 100;
+
+  // // Derivative term
+  // int32_t d_term = (kd * (error - prev_error)) / 100;
+  // prev_error = error;
+
+  // // Calculate the control signal
+  // control_signal = (p_term + integral + d_term)/1000;
+
+  // // Limit the control output to a maximum of 256
+  // // control_signal = limit_max(control_signal, 50);
+
+  // // if(control_signal < PID_UNDER_THRESHOLD){
+  // //   control_signal = PID_UNDER_THRESHOLD;
+  // //   integral = PID_UNDER_THRESHOLD*1000;
+  // // }
+  // if(control_signal > PID_UPPER_THRESHOLD){
+  //   control_signal = PID_UPPER_THRESHOLD;
+  //   integral = PID_UPPER_THRESHOLD*1000;
+  // }
+  // prev_control_signal = control_signal;
+
+  // if(control_signal < prev_control_signal){
+  //   control_signal--;
+  // }
+  // else{
+  //   control_signal++;
+  // }
+
+  // V3
+
   if(measured_value > PID_SETPOINT){
     control_signal--;
   }
@@ -786,7 +942,8 @@ void change_potentiometer(uint8_t new_value){
   HAL_GPIO_WritePin(SC_GPIO_Port, SC_Pin, GPIO_PIN_SET);
 }
 
-/* USER CODE END 4 */
+/* USER CODE E
+ND 4 */
 
 /**
   * @brief  This function is executed in case of error occurrence.

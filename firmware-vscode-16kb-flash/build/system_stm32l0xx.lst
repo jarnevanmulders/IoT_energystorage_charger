@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\cccsch5c.s 			page 1
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccZ4y8ti.s 			page 1
 
 
    1              		.cpu cortex-m0plus
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\cccsch5c.s 			page 1
   30:Core/Src/system_stm32l0xx.c ****   * If no LICENSE file comes with this software, it is provided AS-IS.
   31:Core/Src/system_stm32l0xx.c ****   *
   32:Core/Src/system_stm32l0xx.c ****   ******************************************************************************
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\cccsch5c.s 			page 2
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccZ4y8ti.s 			page 2
 
 
   33:Core/Src/system_stm32l0xx.c ****   */
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\cccsch5c.s 			page 1
   87:Core/Src/system_stm32l0xx.c **** /*!< Uncomment the following line if you need to relocate your vector Table
   88:Core/Src/system_stm32l0xx.c ****      in Sram else user remap will be done in Flash. */
   89:Core/Src/system_stm32l0xx.c **** /* #define VECT_TAB_SRAM */
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\cccsch5c.s 			page 3
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccZ4y8ti.s 			page 3
 
 
   90:Core/Src/system_stm32l0xx.c **** #if defined(VECT_TAB_SRAM)
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\cccsch5c.s 			page 1
  144:Core/Src/system_stm32l0xx.c **** /** @addtogroup STM32L0xx_System_Private_Functions
  145:Core/Src/system_stm32l0xx.c ****   * @{
  146:Core/Src/system_stm32l0xx.c ****   */
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\cccsch5c.s 			page 4
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccZ4y8ti.s 			page 4
 
 
  147:Core/Src/system_stm32l0xx.c **** 
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\cccsch5c.s 			page 1
  182:Core/Src/system_stm32l0xx.c ****   *           - If SYSCLK source is PLL, SystemCoreClock will contain the HSE_VALUE(**)
  183:Core/Src/system_stm32l0xx.c ****   *             or HSI_VALUE(*) multiplied/divided by the PLL factors.
  184:Core/Src/system_stm32l0xx.c ****   *
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\cccsch5c.s 			page 5
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccZ4y8ti.s 			page 5
 
 
  185:Core/Src/system_stm32l0xx.c ****   *         (*) HSI_VALUE is a constant defined in stm32l0xx_hal.h file (default value
@@ -262,33 +262,32 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\cccsch5c.s 			page 1
   50              		@ args = 0, pretend = 0, frame = 0
   51              		@ frame_needed = 0, uses_anonymous_args = 0
   52 0000 10B5     		push	{r4, lr}
-  53              	.LCFI0:
-  54              		.cfi_def_cfa_offset 8
-  55              		.cfi_offset 4, -8
-  56              		.cfi_offset 14, -4
+  53              		.cfi_def_cfa_offset 8
+  54              		.cfi_offset 4, -8
+  55              		.cfi_offset 14, -4
  201:Core/Src/system_stm32l0xx.c ****   uint32_t tmp = 0U, pllmul = 0U, plldiv = 0U, pllsource = 0U, msirange = 0U;
-  57              		.loc 1 201 3 view .LVU3
-  58              	.LVL0:
+  56              		.loc 1 201 3 view .LVU3
+  57              	.LVL0:
  202:Core/Src/system_stm32l0xx.c **** 
  203:Core/Src/system_stm32l0xx.c ****   /* Get SYSCLK source -------------------------------------------------------*/
  204:Core/Src/system_stm32l0xx.c ****   tmp = RCC->CFGR & RCC_CFGR_SWS;
-  59              		.loc 1 204 3 view .LVU4
-  60              		.loc 1 204 12 is_stmt 0 view .LVU5
-  61 0002 344B     		ldr	r3, .L11
-  62 0004 DA68     		ldr	r2, [r3, #12]
-  63              		.loc 1 204 7 view .LVU6
-  64 0006 0C23     		movs	r3, #12
-  65 0008 1340     		ands	r3, r2
-  66              	.LVL1:
+  58              		.loc 1 204 3 view .LVU4
+  59              		.loc 1 204 12 is_stmt 0 view .LVU5
+  60 0002 344B     		ldr	r3, .L11
+  61 0004 DA68     		ldr	r2, [r3, #12]
+  62              		.loc 1 204 7 view .LVU6
+  63 0006 0C23     		movs	r3, #12
+  64 0008 1340     		ands	r3, r2
+  65              	.LVL1:
  205:Core/Src/system_stm32l0xx.c **** 
  206:Core/Src/system_stm32l0xx.c ****   switch (tmp)
-  67              		.loc 1 206 3 is_stmt 1 view .LVU7
-  68 000a 042B     		cmp	r3, #4
-  69 000c 3AD0     		beq	.L3
-  70 000e 082B     		cmp	r3, #8
-  71 0010 44D0     		beq	.L4
-  72 0012 002B     		cmp	r3, #0
-  73 0014 1ED0     		beq	.L10
+  66              		.loc 1 206 3 is_stmt 1 view .LVU7
+  67 000a 042B     		cmp	r3, #4
+  68 000c 3AD0     		beq	.L3
+  69 000e 082B     		cmp	r3, #8
+  70 0010 44D0     		beq	.L4
+  71 0012 002B     		cmp	r3, #0
+  72 0014 1ED0     		beq	.L10
  207:Core/Src/system_stm32l0xx.c ****   {
  208:Core/Src/system_stm32l0xx.c ****     case 0x00U:  /* MSI used as system clock */
  209:Core/Src/system_stm32l0xx.c ****       msirange = (RCC->ICSCR & RCC_ICSCR_MSIRANGE) >> RCC_ICSCR_MSIRANGE_Pos;
@@ -298,10 +297,10 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\cccsch5c.s 			page 1
  213:Core/Src/system_stm32l0xx.c ****       if ((RCC->CR & RCC_CR_HSIDIVF) != 0U)
  214:Core/Src/system_stm32l0xx.c ****       {
  215:Core/Src/system_stm32l0xx.c ****         SystemCoreClock = HSI_VALUE / 4U;
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\cccsch5c.s 			page 6
-
-
  216:Core/Src/system_stm32l0xx.c ****       }
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccZ4y8ti.s 			page 6
+
+
  217:Core/Src/system_stm32l0xx.c ****       else
  218:Core/Src/system_stm32l0xx.c ****       {
  219:Core/Src/system_stm32l0xx.c ****         SystemCoreClock = HSI_VALUE;
@@ -313,129 +312,129 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\cccsch5c.s 			page 1
  225:Core/Src/system_stm32l0xx.c ****     default:  /* PLL used as system clock */
  226:Core/Src/system_stm32l0xx.c ****       /* Get PLL clock source and multiplication factor ----------------------*/
  227:Core/Src/system_stm32l0xx.c ****       pllmul = RCC->CFGR & RCC_CFGR_PLLMUL;
-  74              		.loc 1 227 7 view .LVU8
-  75              		.loc 1 227 19 is_stmt 0 view .LVU9
-  76 0016 2F4B     		ldr	r3, .L11
-  77              	.LVL2:
-  78              		.loc 1 227 19 view .LVU10
-  79 0018 D868     		ldr	r0, [r3, #12]
-  80              	.LVL3:
+  73              		.loc 1 227 7 view .LVU8
+  74              		.loc 1 227 19 is_stmt 0 view .LVU9
+  75 0016 2F4B     		ldr	r3, .L11
+  76              	.LVL2:
+  77              		.loc 1 227 19 view .LVU10
+  78 0018 D868     		ldr	r0, [r3, #12]
+  79              	.LVL3:
  228:Core/Src/system_stm32l0xx.c ****       plldiv = RCC->CFGR & RCC_CFGR_PLLDIV;
-  81              		.loc 1 228 7 is_stmt 1 view .LVU11
-  82              		.loc 1 228 19 is_stmt 0 view .LVU12
-  83 001a DA68     		ldr	r2, [r3, #12]
-  84              	.LVL4:
+  80              		.loc 1 228 7 is_stmt 1 view .LVU11
+  81              		.loc 1 228 19 is_stmt 0 view .LVU12
+  82 001a DA68     		ldr	r2, [r3, #12]
+  83              	.LVL4:
  229:Core/Src/system_stm32l0xx.c ****       pllmul = PLLMulTable[(pllmul >> RCC_CFGR_PLLMUL_Pos)];
-  85              		.loc 1 229 7 is_stmt 1 view .LVU13
-  86              		.loc 1 229 36 is_stmt 0 view .LVU14
-  87 001c 800C     		lsrs	r0, r0, #18
-  88              	.LVL5:
-  89              		.loc 1 229 36 view .LVU15
-  90 001e 0F21     		movs	r1, #15
-  91 0020 0140     		ands	r1, r0
-  92              		.loc 1 229 27 view .LVU16
-  93 0022 2D48     		ldr	r0, .L11+4
-  94 0024 445C     		ldrb	r4, [r0, r1]
-  95              	.LVL6:
+  84              		.loc 1 229 7 is_stmt 1 view .LVU13
+  85              		.loc 1 229 36 is_stmt 0 view .LVU14
+  86 001c 800C     		lsrs	r0, r0, #18
+  87              	.LVL5:
+  88              		.loc 1 229 36 view .LVU15
+  89 001e 0F21     		movs	r1, #15
+  90 0020 0140     		ands	r1, r0
+  91              		.loc 1 229 27 view .LVU16
+  92 0022 2D48     		ldr	r0, .L11+4
+  93 0024 445C     		ldrb	r4, [r0, r1]
+  94              	.LVL6:
  230:Core/Src/system_stm32l0xx.c ****       plldiv = (plldiv >> RCC_CFGR_PLLDIV_Pos) + 1U;
-  96              		.loc 1 230 7 is_stmt 1 view .LVU17
-  97              		.loc 1 230 24 is_stmt 0 view .LVU18
-  98 0026 920D     		lsrs	r2, r2, #22
-  99              	.LVL7:
- 100              		.loc 1 230 24 view .LVU19
- 101 0028 0321     		movs	r1, #3
- 102 002a 1140     		ands	r1, r2
- 103              		.loc 1 230 14 view .LVU20
- 104 002c 0131     		adds	r1, r1, #1
- 105              	.LVL8:
+  95              		.loc 1 230 7 is_stmt 1 view .LVU17
+  96              		.loc 1 230 24 is_stmt 0 view .LVU18
+  97 0026 920D     		lsrs	r2, r2, #22
+  98              	.LVL7:
+  99              		.loc 1 230 24 view .LVU19
+ 100 0028 0321     		movs	r1, #3
+ 101 002a 1140     		ands	r1, r2
+ 102              		.loc 1 230 14 view .LVU20
+ 103 002c 0131     		adds	r1, r1, #1
+ 104              	.LVL8:
  231:Core/Src/system_stm32l0xx.c **** 
  232:Core/Src/system_stm32l0xx.c ****       pllsource = RCC->CFGR & RCC_CFGR_PLLSRC;
- 106              		.loc 1 232 7 is_stmt 1 view .LVU21
- 107              		.loc 1 232 22 is_stmt 0 view .LVU22
- 108 002e DB68     		ldr	r3, [r3, #12]
- 109              	.LVL9:
+ 105              		.loc 1 232 7 is_stmt 1 view .LVU21
+ 106              		.loc 1 232 22 is_stmt 0 view .LVU22
+ 107 002e DB68     		ldr	r3, [r3, #12]
+ 108              	.LVL9:
  233:Core/Src/system_stm32l0xx.c **** 
  234:Core/Src/system_stm32l0xx.c ****       if (pllsource == 0x00U)
- 110              		.loc 1 234 7 is_stmt 1 view .LVU23
- 111              		.loc 1 234 10 is_stmt 0 view .LVU24
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\cccsch5c.s 			page 7
+ 109              		.loc 1 234 7 is_stmt 1 view .LVU23
+ 110              		.loc 1 234 10 is_stmt 0 view .LVU24
+ 111 0030 DB03     		lsls	r3, r3, #15
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccZ4y8ti.s 			page 7
 
 
- 112 0030 DB03     		lsls	r3, r3, #15
- 113 0032 43D4     		bmi	.L8
- 114              	.LVL10:
+ 112 0032 43D4     		bmi	.L8
+ 113              	.LVL10:
  235:Core/Src/system_stm32l0xx.c ****       {
  236:Core/Src/system_stm32l0xx.c ****         /* HSI oscillator clock selected as PLL clock entry */
  237:Core/Src/system_stm32l0xx.c ****         if ((RCC->CR & RCC_CR_HSIDIVF) != 0U)
- 115              		.loc 1 237 9 is_stmt 1 view .LVU25
- 116              		.loc 1 237 17 is_stmt 0 view .LVU26
- 117 0034 274B     		ldr	r3, .L11
- 118 0036 1B68     		ldr	r3, [r3]
- 119              		.loc 1 237 12 view .LVU27
- 120 0038 DB06     		lsls	r3, r3, #27
- 121 003a 33D5     		bpl	.L9
+ 114              		.loc 1 237 9 is_stmt 1 view .LVU25
+ 115              		.loc 1 237 17 is_stmt 0 view .LVU26
+ 116 0034 274B     		ldr	r3, .L11
+ 117 0036 1B68     		ldr	r3, [r3]
+ 118              		.loc 1 237 12 view .LVU27
+ 119 0038 DB06     		lsls	r3, r3, #27
+ 120 003a 33D5     		bpl	.L9
  238:Core/Src/system_stm32l0xx.c ****         {
  239:Core/Src/system_stm32l0xx.c ****           SystemCoreClock = (((HSI_VALUE / 4U) * pllmul) / plldiv);
- 122              		.loc 1 239 11 is_stmt 1 view .LVU28
- 123              		.loc 1 239 48 is_stmt 0 view .LVU29
- 124 003c 6301     		lsls	r3, r4, #5
- 125 003e 1B1B     		subs	r3, r3, r4
- 126 0040 9801     		lsls	r0, r3, #6
- 127 0042 C01A     		subs	r0, r0, r3
- 128 0044 C000     		lsls	r0, r0, #3
- 129 0046 0019     		adds	r0, r0, r4
- 130 0048 0002     		lsls	r0, r0, #8
- 131              		.loc 1 239 58 view .LVU30
- 132 004a FFF7FEFF 		bl	__aeabi_uidiv
- 133              	.LVL11:
- 134              		.loc 1 239 27 view .LVU31
- 135 004e 234B     		ldr	r3, .L11+8
- 136 0050 1860     		str	r0, [r3]
- 137 0052 0BE0     		b	.L6
- 138              	.LVL12:
- 139              	.L10:
+ 121              		.loc 1 239 11 is_stmt 1 view .LVU28
+ 122              		.loc 1 239 48 is_stmt 0 view .LVU29
+ 123 003c 6301     		lsls	r3, r4, #5
+ 124 003e 1B1B     		subs	r3, r3, r4
+ 125 0040 9801     		lsls	r0, r3, #6
+ 126 0042 C01A     		subs	r0, r0, r3
+ 127 0044 C000     		lsls	r0, r0, #3
+ 128 0046 0019     		adds	r0, r0, r4
+ 129 0048 0002     		lsls	r0, r0, #8
+ 130              		.loc 1 239 58 view .LVU30
+ 131 004a FFF7FEFF 		bl	__aeabi_uidiv
+ 132              	.LVL11:
+ 133              		.loc 1 239 27 view .LVU31
+ 134 004e 234B     		ldr	r3, .L11+8
+ 135 0050 1860     		str	r0, [r3]
+ 136 0052 0BE0     		b	.L6
+ 137              	.LVL12:
+ 138              	.L10:
  209:Core/Src/system_stm32l0xx.c ****       SystemCoreClock = (32768U * (1U << (msirange + 1U)));
- 140              		.loc 1 209 7 is_stmt 1 view .LVU32
+ 139              		.loc 1 209 7 is_stmt 1 view .LVU32
  209:Core/Src/system_stm32l0xx.c ****       SystemCoreClock = (32768U * (1U << (msirange + 1U)));
- 141              		.loc 1 209 22 is_stmt 0 view .LVU33
- 142 0054 1F4B     		ldr	r3, .L11
- 143              	.LVL13:
+ 140              		.loc 1 209 22 is_stmt 0 view .LVU33
+ 141 0054 1F4B     		ldr	r3, .L11
+ 142              	.LVL13:
  209:Core/Src/system_stm32l0xx.c ****       SystemCoreClock = (32768U * (1U << (msirange + 1U)));
- 144              		.loc 1 209 22 view .LVU34
- 145 0056 5A68     		ldr	r2, [r3, #4]
- 146              	.LVL14:
+ 143              		.loc 1 209 22 view .LVU34
+ 144 0056 5A68     		ldr	r2, [r3, #4]
+ 145              	.LVL14:
  209:Core/Src/system_stm32l0xx.c ****       SystemCoreClock = (32768U * (1U << (msirange + 1U)));
- 147              		.loc 1 209 52 view .LVU35
- 148 0058 520B     		lsrs	r2, r2, #13
+ 146              		.loc 1 209 52 view .LVU35
+ 147 0058 520B     		lsrs	r2, r2, #13
  209:Core/Src/system_stm32l0xx.c ****       SystemCoreClock = (32768U * (1U << (msirange + 1U)));
- 149              		.loc 1 209 16 view .LVU36
- 150 005a 0723     		movs	r3, #7
- 151 005c 1340     		ands	r3, r2
- 152              	.LVL15:
+ 148              		.loc 1 209 16 view .LVU36
+ 149 005a 0723     		movs	r3, #7
+ 150 005c 1340     		ands	r3, r2
+ 151              	.LVL15:
  210:Core/Src/system_stm32l0xx.c ****       break;
- 153              		.loc 1 210 7 is_stmt 1 view .LVU37
+ 152              		.loc 1 210 7 is_stmt 1 view .LVU37
  210:Core/Src/system_stm32l0xx.c ****       break;
- 154              		.loc 1 210 52 is_stmt 0 view .LVU38
- 155 005e 0133     		adds	r3, r3, #1
- 156              	.LVL16:
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\cccsch5c.s 			page 8
+ 153              		.loc 1 210 52 is_stmt 0 view .LVU38
+ 154 005e 0133     		adds	r3, r3, #1
+ 155              	.LVL16:
+ 210:Core/Src/system_stm32l0xx.c ****       break;
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccZ4y8ti.s 			page 8
 
 
+ 156              		.loc 1 210 33 view .LVU39
+ 157 0060 8022     		movs	r2, #128
+ 158 0062 1202     		lsls	r2, r2, #8
+ 159 0064 9A40     		lsls	r2, r2, r3
+ 160 0066 1300     		movs	r3, r2
+ 161              	.LVL17:
  210:Core/Src/system_stm32l0xx.c ****       break;
- 157              		.loc 1 210 33 view .LVU39
- 158 0060 8022     		movs	r2, #128
- 159 0062 1202     		lsls	r2, r2, #8
- 160 0064 9A40     		lsls	r2, r2, r3
- 161 0066 1300     		movs	r3, r2
- 162              	.LVL17:
- 210:Core/Src/system_stm32l0xx.c ****       break;
- 163              		.loc 1 210 23 view .LVU40
- 164 0068 1C4A     		ldr	r2, .L11+8
- 165 006a 1360     		str	r3, [r2]
+ 162              		.loc 1 210 23 view .LVU40
+ 163 0068 1C4A     		ldr	r2, .L11+8
+ 164 006a 1360     		str	r3, [r2]
  211:Core/Src/system_stm32l0xx.c ****     case 0x04U:  /* HSI used as system clock */
- 166              		.loc 1 211 7 is_stmt 1 view .LVU41
- 167              	.LVL18:
- 168              	.L6:
+ 165              		.loc 1 211 7 is_stmt 1 view .LVU41
+ 166              	.LVL18:
+ 167              	.L6:
  240:Core/Src/system_stm32l0xx.c ****         }
  241:Core/Src/system_stm32l0xx.c ****         else
  242:Core/Src/system_stm32l0xx.c ****         {
@@ -452,203 +451,203 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\cccsch5c.s 			page 1
  253:Core/Src/system_stm32l0xx.c ****   /* Compute HCLK clock frequency --------------------------------------------*/
  254:Core/Src/system_stm32l0xx.c ****   /* Get HCLK prescaler */
  255:Core/Src/system_stm32l0xx.c ****   tmp = AHBPrescTable[((RCC->CFGR & RCC_CFGR_HPRE) >> RCC_CFGR_HPRE_Pos)];
- 169              		.loc 1 255 3 view .LVU42
- 170              		.loc 1 255 28 is_stmt 0 view .LVU43
- 171 006c 194B     		ldr	r3, .L11
- 172 006e DA68     		ldr	r2, [r3, #12]
- 173              		.loc 1 255 52 view .LVU44
- 174 0070 1209     		lsrs	r2, r2, #4
- 175 0072 0F23     		movs	r3, #15
- 176 0074 1340     		ands	r3, r2
- 177              		.loc 1 255 22 view .LVU45
- 178 0076 1A4A     		ldr	r2, .L11+12
- 179 0078 D15C     		ldrb	r1, [r2, r3]
- 180              	.LVL19:
+ 168              		.loc 1 255 3 view .LVU42
+ 169              		.loc 1 255 28 is_stmt 0 view .LVU43
+ 170 006c 194B     		ldr	r3, .L11
+ 171 006e DA68     		ldr	r2, [r3, #12]
+ 172              		.loc 1 255 52 view .LVU44
+ 173 0070 1209     		lsrs	r2, r2, #4
+ 174 0072 0F23     		movs	r3, #15
+ 175 0074 1340     		ands	r3, r2
+ 176              		.loc 1 255 22 view .LVU45
+ 177 0076 1A4A     		ldr	r2, .L11+12
+ 178 0078 D15C     		ldrb	r1, [r2, r3]
+ 179              	.LVL19:
  256:Core/Src/system_stm32l0xx.c ****   /* HCLK clock frequency */
  257:Core/Src/system_stm32l0xx.c ****   SystemCoreClock >>= tmp;
- 181              		.loc 1 257 3 is_stmt 1 view .LVU46
- 182              		.loc 1 257 19 is_stmt 0 view .LVU47
- 183 007a 184A     		ldr	r2, .L11+8
- 184 007c 1368     		ldr	r3, [r2]
- 185 007e CB40     		lsrs	r3, r3, r1
- 186 0080 1360     		str	r3, [r2]
+ 180              		.loc 1 257 3 is_stmt 1 view .LVU46
+ 181              		.loc 1 257 19 is_stmt 0 view .LVU47
+ 182 007a 184A     		ldr	r2, .L11+8
+ 183 007c 1368     		ldr	r3, [r2]
+ 184 007e CB40     		lsrs	r3, r3, r1
+ 185 0080 1360     		str	r3, [r2]
  258:Core/Src/system_stm32l0xx.c **** }
- 187              		.loc 1 258 1 view .LVU48
- 188              		@ sp needed
- 189 0082 10BD     		pop	{r4, pc}
- 190              	.LVL20:
- 191              	.L3:
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\cccsch5c.s 			page 9
+ 186              		.loc 1 258 1 view .LVU48
+ 187              		@ sp needed
+ 188 0082 10BD     		pop	{r4, pc}
+ 189              	.LVL20:
+ 190              	.L3:
+ 213:Core/Src/system_stm32l0xx.c ****       {
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccZ4y8ti.s 			page 9
 
 
+ 191              		.loc 1 213 7 is_stmt 1 view .LVU49
  213:Core/Src/system_stm32l0xx.c ****       {
- 192              		.loc 1 213 7 is_stmt 1 view .LVU49
+ 192              		.loc 1 213 15 is_stmt 0 view .LVU50
+ 193 0084 134B     		ldr	r3, .L11
+ 194              	.LVL21:
  213:Core/Src/system_stm32l0xx.c ****       {
- 193              		.loc 1 213 15 is_stmt 0 view .LVU50
- 194 0084 134B     		ldr	r3, .L11
- 195              	.LVL21:
+ 195              		.loc 1 213 15 view .LVU51
+ 196 0086 1B68     		ldr	r3, [r3]
  213:Core/Src/system_stm32l0xx.c ****       {
- 196              		.loc 1 213 15 view .LVU51
- 197 0086 1B68     		ldr	r3, [r3]
- 213:Core/Src/system_stm32l0xx.c ****       {
- 198              		.loc 1 213 10 view .LVU52
- 199 0088 DB06     		lsls	r3, r3, #27
- 200 008a 03D5     		bpl	.L7
+ 197              		.loc 1 213 10 view .LVU52
+ 198 0088 DB06     		lsls	r3, r3, #27
+ 199 008a 03D5     		bpl	.L7
  215:Core/Src/system_stm32l0xx.c ****       }
- 201              		.loc 1 215 9 is_stmt 1 view .LVU53
+ 200              		.loc 1 215 9 is_stmt 1 view .LVU53
  215:Core/Src/system_stm32l0xx.c ****       }
- 202              		.loc 1 215 25 is_stmt 0 view .LVU54
- 203 008c 134B     		ldr	r3, .L11+8
- 204 008e 154A     		ldr	r2, .L11+16
- 205              	.LVL22:
+ 201              		.loc 1 215 25 is_stmt 0 view .LVU54
+ 202 008c 134B     		ldr	r3, .L11+8
+ 203 008e 154A     		ldr	r2, .L11+16
+ 204              	.LVL22:
  215:Core/Src/system_stm32l0xx.c ****       }
- 206              		.loc 1 215 25 view .LVU55
- 207 0090 1A60     		str	r2, [r3]
- 208 0092 EBE7     		b	.L6
- 209              	.LVL23:
- 210              	.L7:
+ 205              		.loc 1 215 25 view .LVU55
+ 206 0090 1A60     		str	r2, [r3]
+ 207 0092 EBE7     		b	.L6
+ 208              	.LVL23:
+ 209              	.L7:
  219:Core/Src/system_stm32l0xx.c ****       }
- 211              		.loc 1 219 9 is_stmt 1 view .LVU56
+ 210              		.loc 1 219 9 is_stmt 1 view .LVU56
  219:Core/Src/system_stm32l0xx.c ****       }
- 212              		.loc 1 219 25 is_stmt 0 view .LVU57
- 213 0094 114B     		ldr	r3, .L11+8
- 214 0096 144A     		ldr	r2, .L11+20
- 215              	.LVL24:
+ 211              		.loc 1 219 25 is_stmt 0 view .LVU57
+ 212 0094 114B     		ldr	r3, .L11+8
+ 213 0096 144A     		ldr	r2, .L11+20
+ 214              	.LVL24:
  219:Core/Src/system_stm32l0xx.c ****       }
- 216              		.loc 1 219 25 view .LVU58
- 217 0098 1A60     		str	r2, [r3]
- 218 009a E7E7     		b	.L6
- 219              	.LVL25:
- 220              	.L4:
+ 215              		.loc 1 219 25 view .LVU58
+ 216 0098 1A60     		str	r2, [r3]
+ 217 009a E7E7     		b	.L6
+ 218              	.LVL25:
+ 219              	.L4:
  223:Core/Src/system_stm32l0xx.c ****       break;
- 221              		.loc 1 223 7 is_stmt 1 view .LVU59
+ 220              		.loc 1 223 7 is_stmt 1 view .LVU59
  223:Core/Src/system_stm32l0xx.c ****       break;
- 222              		.loc 1 223 23 is_stmt 0 view .LVU60
- 223 009c 0F4B     		ldr	r3, .L11+8
- 224              	.LVL26:
+ 221              		.loc 1 223 23 is_stmt 0 view .LVU60
+ 222 009c 0F4B     		ldr	r3, .L11+8
+ 223              	.LVL26:
  223:Core/Src/system_stm32l0xx.c ****       break;
- 225              		.loc 1 223 23 view .LVU61
- 226 009e 134A     		ldr	r2, .L11+24
- 227              	.LVL27:
+ 224              		.loc 1 223 23 view .LVU61
+ 225 009e 134A     		ldr	r2, .L11+24
+ 226              	.LVL27:
  223:Core/Src/system_stm32l0xx.c ****       break;
- 228              		.loc 1 223 23 view .LVU62
- 229 00a0 1A60     		str	r2, [r3]
+ 227              		.loc 1 223 23 view .LVU62
+ 228 00a0 1A60     		str	r2, [r3]
  224:Core/Src/system_stm32l0xx.c ****     default:  /* PLL used as system clock */
- 230              		.loc 1 224 7 is_stmt 1 view .LVU63
- 231 00a2 E3E7     		b	.L6
- 232              	.LVL28:
- 233              	.L9:
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\cccsch5c.s 			page 10
+ 229              		.loc 1 224 7 is_stmt 1 view .LVU63
+ 230 00a2 E3E7     		b	.L6
+ 231              	.LVL28:
+ 232              	.L9:
+ 243:Core/Src/system_stm32l0xx.c ****         }
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccZ4y8ti.s 			page 10
 
 
+ 233              		.loc 1 243 11 view .LVU64
  243:Core/Src/system_stm32l0xx.c ****         }
- 234              		.loc 1 243 11 view .LVU64
+ 234              		.loc 1 243 43 is_stmt 0 view .LVU65
+ 235 00a4 6301     		lsls	r3, r4, #5
+ 236 00a6 1B1B     		subs	r3, r3, r4
+ 237 00a8 9801     		lsls	r0, r3, #6
+ 238 00aa C01A     		subs	r0, r0, r3
+ 239 00ac C000     		lsls	r0, r0, #3
+ 240 00ae 0019     		adds	r0, r0, r4
+ 241 00b0 8002     		lsls	r0, r0, #10
  243:Core/Src/system_stm32l0xx.c ****         }
- 235              		.loc 1 243 43 is_stmt 0 view .LVU65
- 236 00a4 6301     		lsls	r3, r4, #5
- 237 00a6 1B1B     		subs	r3, r3, r4
- 238 00a8 9801     		lsls	r0, r3, #6
- 239 00aa C01A     		subs	r0, r0, r3
- 240 00ac C000     		lsls	r0, r0, #3
- 241 00ae 0019     		adds	r0, r0, r4
- 242 00b0 8002     		lsls	r0, r0, #10
+ 242              		.loc 1 243 53 view .LVU66
+ 243 00b2 FFF7FEFF 		bl	__aeabi_uidiv
+ 244              	.LVL29:
  243:Core/Src/system_stm32l0xx.c ****         }
- 243              		.loc 1 243 53 view .LVU66
- 244 00b2 FFF7FEFF 		bl	__aeabi_uidiv
- 245              	.LVL29:
- 243:Core/Src/system_stm32l0xx.c ****         }
- 246              		.loc 1 243 27 view .LVU67
- 247 00b6 094B     		ldr	r3, .L11+8
- 248 00b8 1860     		str	r0, [r3]
- 249 00ba D7E7     		b	.L6
- 250              	.LVL30:
- 251              	.L8:
+ 245              		.loc 1 243 27 view .LVU67
+ 246 00b6 094B     		ldr	r3, .L11+8
+ 247 00b8 1860     		str	r0, [r3]
+ 248 00ba D7E7     		b	.L6
+ 249              	.LVL30:
+ 250              	.L8:
  249:Core/Src/system_stm32l0xx.c ****       }
- 252              		.loc 1 249 9 is_stmt 1 view .LVU68
+ 251              		.loc 1 249 9 is_stmt 1 view .LVU68
  249:Core/Src/system_stm32l0xx.c ****       }
- 253              		.loc 1 249 41 is_stmt 0 view .LVU69
- 254 00bc 6301     		lsls	r3, r4, #5
- 255 00be 1B1B     		subs	r3, r3, r4
- 256 00c0 9801     		lsls	r0, r3, #6
- 257 00c2 C01A     		subs	r0, r0, r3
- 258 00c4 C000     		lsls	r0, r0, #3
- 259 00c6 0019     		adds	r0, r0, r4
- 260 00c8 4002     		lsls	r0, r0, #9
+ 252              		.loc 1 249 41 is_stmt 0 view .LVU69
+ 253 00bc 6301     		lsls	r3, r4, #5
+ 254 00be 1B1B     		subs	r3, r3, r4
+ 255 00c0 9801     		lsls	r0, r3, #6
+ 256 00c2 C01A     		subs	r0, r0, r3
+ 257 00c4 C000     		lsls	r0, r0, #3
+ 258 00c6 0019     		adds	r0, r0, r4
+ 259 00c8 4002     		lsls	r0, r0, #9
  249:Core/Src/system_stm32l0xx.c ****       }
- 261              		.loc 1 249 51 view .LVU70
- 262 00ca FFF7FEFF 		bl	__aeabi_uidiv
- 263              	.LVL31:
+ 260              		.loc 1 249 51 view .LVU70
+ 261 00ca FFF7FEFF 		bl	__aeabi_uidiv
+ 262              	.LVL31:
  249:Core/Src/system_stm32l0xx.c ****       }
- 264              		.loc 1 249 25 view .LVU71
- 265 00ce 034B     		ldr	r3, .L11+8
- 266 00d0 1860     		str	r0, [r3]
- 267 00d2 CBE7     		b	.L6
- 268              	.L12:
- 269              		.align	2
- 270              	.L11:
- 271 00d4 00100240 		.word	1073876992
- 272 00d8 00000000 		.word	PLLMulTable
- 273 00dc 00000000 		.word	SystemCoreClock
- 274 00e0 00000000 		.word	AHBPrescTable
- 275 00e4 00093D00 		.word	4000000
- 276 00e8 0024F400 		.word	16000000
- 277 00ec 00127A00 		.word	8000000
- 278              		.cfi_endproc
- 279              	.LFE41:
- 281              		.global	PLLMulTable
- 282              		.section	.rodata.PLLMulTable,"a"
- 283              		.align	2
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\cccsch5c.s 			page 11
+ 263              		.loc 1 249 25 view .LVU71
+ 264 00ce 034B     		ldr	r3, .L11+8
+ 265 00d0 1860     		str	r0, [r3]
+ 266 00d2 CBE7     		b	.L6
+ 267              	.L12:
+ 268              		.align	2
+ 269              	.L11:
+ 270 00d4 00100240 		.word	1073876992
+ 271 00d8 00000000 		.word	PLLMulTable
+ 272 00dc 00000000 		.word	SystemCoreClock
+ 273 00e0 00000000 		.word	AHBPrescTable
+ 274 00e4 00093D00 		.word	4000000
+ 275 00e8 0024F400 		.word	16000000
+ 276 00ec 00127A00 		.word	8000000
+ 277              		.cfi_endproc
+ 278              	.LFE41:
+ 280              		.global	PLLMulTable
+ 281              		.section	.rodata.PLLMulTable,"a"
+ 282              		.align	2
+ 285              	PLLMulTable:
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccZ4y8ti.s 			page 11
 
 
- 286              	PLLMulTable:
- 287 0000 03040608 		.ascii	"\003\004\006\010\014\020\030 0"
- 287      0C101820 
- 287      30
- 288              		.global	APBPrescTable
- 289              		.section	.rodata.APBPrescTable,"a"
- 290              		.align	2
- 293              	APBPrescTable:
- 294 0000 00000000 		.ascii	"\000\000\000\000\001\002\003\004"
- 294      01020304 
- 295              		.global	AHBPrescTable
- 296              		.section	.rodata.AHBPrescTable,"a"
- 297              		.align	2
- 300              	AHBPrescTable:
- 301 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\001\002\003\004\006"
- 301      00000000 
- 301      01020304 
- 301      06
- 302 000d 070809   		.ascii	"\007\010\011"
- 303              		.global	SystemCoreClock
- 304              		.section	.data.SystemCoreClock,"aw"
- 305              		.align	2
- 308              	SystemCoreClock:
- 309 0000 00002000 		.word	2097152
- 310              		.text
- 311              	.Letext0:
- 312              		.file 2 "c:\\users\\jarne\\appdata\\roaming\\gnu mcu eclipse\\arm embedded gcc\\arm-none-eabi\\inc
- 313              		.file 3 "c:\\users\\jarne\\appdata\\roaming\\gnu mcu eclipse\\arm embedded gcc\\arm-none-eabi\\inc
- 314              		.file 4 "Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h"
- 315              		.file 5 "Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l011xx.h"
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\cccsch5c.s 			page 12
+ 286 0000 03040608 		.ascii	"\003\004\006\010\014\020\030 0"
+ 286      0C101820 
+ 286      30
+ 287              		.global	APBPrescTable
+ 288              		.section	.rodata.APBPrescTable,"a"
+ 289              		.align	2
+ 292              	APBPrescTable:
+ 293 0000 00000000 		.ascii	"\000\000\000\000\001\002\003\004"
+ 293      01020304 
+ 294              		.global	AHBPrescTable
+ 295              		.section	.rodata.AHBPrescTable,"a"
+ 296              		.align	2
+ 299              	AHBPrescTable:
+ 300 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\001\002\003\004\006"
+ 300      00000000 
+ 300      01020304 
+ 300      06
+ 301 000d 070809   		.ascii	"\007\010\011"
+ 302              		.global	SystemCoreClock
+ 303              		.section	.data.SystemCoreClock,"aw"
+ 304              		.align	2
+ 307              	SystemCoreClock:
+ 308 0000 00002000 		.word	2097152
+ 309              		.text
+ 310              	.Letext0:
+ 311              		.file 2 "c:\\users\\jarne\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
+ 312              		.file 3 "c:\\users\\jarne\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
+ 313              		.file 4 "Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h"
+ 314              		.file 5 "Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l011xx.h"
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccZ4y8ti.s 			page 12
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 system_stm32l0xx.c
-C:\Users\jarne\AppData\Local\Temp\cccsch5c.s:19     .text.SystemInit:0000000000000000 $t
-C:\Users\jarne\AppData\Local\Temp\cccsch5c.s:25     .text.SystemInit:0000000000000000 SystemInit
-C:\Users\jarne\AppData\Local\Temp\cccsch5c.s:40     .text.SystemCoreClockUpdate:0000000000000000 $t
-C:\Users\jarne\AppData\Local\Temp\cccsch5c.s:46     .text.SystemCoreClockUpdate:0000000000000000 SystemCoreClockUpdate
-C:\Users\jarne\AppData\Local\Temp\cccsch5c.s:271    .text.SystemCoreClockUpdate:00000000000000d4 $d
-C:\Users\jarne\AppData\Local\Temp\cccsch5c.s:286    .rodata.PLLMulTable:0000000000000000 PLLMulTable
-C:\Users\jarne\AppData\Local\Temp\cccsch5c.s:308    .data.SystemCoreClock:0000000000000000 SystemCoreClock
-C:\Users\jarne\AppData\Local\Temp\cccsch5c.s:300    .rodata.AHBPrescTable:0000000000000000 AHBPrescTable
-C:\Users\jarne\AppData\Local\Temp\cccsch5c.s:283    .rodata.PLLMulTable:0000000000000000 $d
-C:\Users\jarne\AppData\Local\Temp\cccsch5c.s:293    .rodata.APBPrescTable:0000000000000000 APBPrescTable
-C:\Users\jarne\AppData\Local\Temp\cccsch5c.s:290    .rodata.APBPrescTable:0000000000000000 $d
-C:\Users\jarne\AppData\Local\Temp\cccsch5c.s:297    .rodata.AHBPrescTable:0000000000000000 $d
-C:\Users\jarne\AppData\Local\Temp\cccsch5c.s:305    .data.SystemCoreClock:0000000000000000 $d
+C:\Users\jarne\AppData\Local\Temp\ccZ4y8ti.s:19     .text.SystemInit:0000000000000000 $t
+C:\Users\jarne\AppData\Local\Temp\ccZ4y8ti.s:25     .text.SystemInit:0000000000000000 SystemInit
+C:\Users\jarne\AppData\Local\Temp\ccZ4y8ti.s:40     .text.SystemCoreClockUpdate:0000000000000000 $t
+C:\Users\jarne\AppData\Local\Temp\ccZ4y8ti.s:46     .text.SystemCoreClockUpdate:0000000000000000 SystemCoreClockUpdate
+C:\Users\jarne\AppData\Local\Temp\ccZ4y8ti.s:270    .text.SystemCoreClockUpdate:00000000000000d4 $d
+C:\Users\jarne\AppData\Local\Temp\ccZ4y8ti.s:285    .rodata.PLLMulTable:0000000000000000 PLLMulTable
+C:\Users\jarne\AppData\Local\Temp\ccZ4y8ti.s:307    .data.SystemCoreClock:0000000000000000 SystemCoreClock
+C:\Users\jarne\AppData\Local\Temp\ccZ4y8ti.s:299    .rodata.AHBPrescTable:0000000000000000 AHBPrescTable
+C:\Users\jarne\AppData\Local\Temp\ccZ4y8ti.s:282    .rodata.PLLMulTable:0000000000000000 $d
+C:\Users\jarne\AppData\Local\Temp\ccZ4y8ti.s:292    .rodata.APBPrescTable:0000000000000000 APBPrescTable
+C:\Users\jarne\AppData\Local\Temp\ccZ4y8ti.s:289    .rodata.APBPrescTable:0000000000000000 $d
+C:\Users\jarne\AppData\Local\Temp\ccZ4y8ti.s:296    .rodata.AHBPrescTable:0000000000000000 $d
+C:\Users\jarne\AppData\Local\Temp\ccZ4y8ti.s:304    .data.SystemCoreClock:0000000000000000 $d
 
 UNDEFINED SYMBOLS
 __aeabi_uidiv

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccsS9T8y.s 			page 1
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccpeeh7j.s 			page 1
 
 
    1              		.cpu cortex-m0plus
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccsS9T8y.s 			page 1
   30:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pwr_ex.c ****   */
   31:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pwr_ex.c **** 
   32:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pwr_ex.c **** /** @addtogroup PWREx 
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccsS9T8y.s 			page 2
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccpeeh7j.s 			page 2
 
 
   33:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pwr_ex.c ****   * @{
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccsS9T8y.s 			page 1
   41              		@ sp needed
   42 000a 7047     		bx	lr
   43              	.L3:
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccsS9T8y.s 			page 3
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccpeeh7j.s 			page 3
 
 
   44              		.align	2
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccsS9T8y.s 			page 1
   88              	HAL_PWREx_DisableFastWakeUp:
   89              	.LFB42:
   87:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pwr_ex.c **** 
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccsS9T8y.s 			page 4
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccpeeh7j.s 			page 4
 
 
   88:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pwr_ex.c **** /**
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccsS9T8y.s 			page 1
  128 0002 1168     		ldr	r1, [r2]
  129 0004 8023     		movs	r3, #128
  130 0006 9B00     		lsls	r3, r3, #2
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccsS9T8y.s 			page 5
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccpeeh7j.s 			page 5
 
 
  131 0008 0B43     		orrs	r3, r1
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccsS9T8y.s 			page 1
  177              		.syntax unified
  178              		.code	16
  179              		.thumb_func
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccsS9T8y.s 			page 6
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccpeeh7j.s 			page 6
 
 
  181              	HAL_PWREx_EnableLowPowerRunMode:
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccsS9T8y.s 			page 1
  218              	HAL_PWREx_DisableLowPowerRunMode:
  219              	.LFB46:
  136:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pwr_ex.c **** 
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccsS9T8y.s 			page 7
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccpeeh7j.s 			page 7
 
 
  137:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pwr_ex.c **** /**
@@ -376,148 +376,147 @@ ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccsS9T8y.s 			page 1
  222              		@ args = 0, pretend = 0, frame = 0
  223              		@ frame_needed = 0, uses_anonymous_args = 0
  224 0000 10B5     		push	{r4, lr}
- 225              	.LCFI0:
- 226              		.cfi_def_cfa_offset 8
- 227              		.cfi_offset 4, -8
- 228              		.cfi_offset 14, -4
+ 225              		.cfi_def_cfa_offset 8
+ 226              		.cfi_offset 4, -8
+ 227              		.cfi_offset 14, -4
  147:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pwr_ex.c ****   uint32_t wait_loop_index = 0U;
- 229              		.loc 1 147 3 view .LVU22
- 230              	.LVL0:
+ 228              		.loc 1 147 3 view .LVU22
+ 229              	.LVL0:
  148:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pwr_ex.c ****   
  149:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pwr_ex.c ****   /* Exit the Low Power Run mode */
  150:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pwr_ex.c ****   CLEAR_BIT(PWR->CR, PWR_CR_LPRUN);
- 231              		.loc 1 150 3 view .LVU23
- 232 0002 104B     		ldr	r3, .L25
- 233 0004 1A68     		ldr	r2, [r3]
- 234 0006 1049     		ldr	r1, .L25+4
- 235 0008 0A40     		ands	r2, r1
- 236 000a 1A60     		str	r2, [r3]
+ 230              		.loc 1 150 3 view .LVU23
+ 231 0002 104B     		ldr	r3, .L25
+ 232 0004 1A68     		ldr	r2, [r3]
+ 233 0006 1049     		ldr	r1, .L25+4
+ 234 0008 0A40     		ands	r2, r1
+ 235 000a 1A60     		str	r2, [r3]
  151:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pwr_ex.c ****   CLEAR_BIT(PWR->CR, PWR_CR_LPSDSR);
- 237              		.loc 1 151 3 view .LVU24
- 238 000c 1A68     		ldr	r2, [r3]
- 239 000e 0121     		movs	r1, #1
- 240 0010 8A43     		bics	r2, r1
- 241 0012 1A60     		str	r2, [r3]
+ 236              		.loc 1 151 3 view .LVU24
+ 237 000c 1A68     		ldr	r2, [r3]
+ 238 000e 0121     		movs	r1, #1
+ 239 0010 8A43     		bics	r2, r1
+ 240 0012 1A60     		str	r2, [r3]
  152:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pwr_ex.c ****   
  153:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pwr_ex.c ****   /* Wait until REGLPF is reset */
  154:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pwr_ex.c ****   wait_loop_index = (PWR_FLAG_SETTING_DELAY_US * (SystemCoreClock / 1000000U));
- 242              		.loc 1 154 3 view .LVU25
- 243              		.loc 1 154 67 is_stmt 0 view .LVU26
- 244 0014 0D4B     		ldr	r3, .L25+8
- 245 0016 1868     		ldr	r0, [r3]
- 246 0018 0D49     		ldr	r1, .L25+12
- 247 001a FFF7FEFF 		bl	__aeabi_uidiv
- 248              	.LVL1:
- 249              		.loc 1 154 19 view .LVU27
- 250 001e 3223     		movs	r3, #50
- 251 0020 5843     		muls	r0, r3
- 252              	.LVL2:
+ 241              		.loc 1 154 3 view .LVU25
+ 242              		.loc 1 154 67 is_stmt 0 view .LVU26
+ 243 0014 0D4B     		ldr	r3, .L25+8
+ 244 0016 1868     		ldr	r0, [r3]
+ 245 0018 0D49     		ldr	r1, .L25+12
+ 246 001a FFF7FEFF 		bl	__aeabi_uidiv
+ 247              	.LVL1:
+ 248              		.loc 1 154 19 view .LVU27
+ 249 001e 3223     		movs	r3, #50
+ 250 0020 5843     		muls	r0, r3
+ 251              	.LVL2:
  155:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pwr_ex.c **** 
  156:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pwr_ex.c ****   while ((wait_loop_index != 0U) && (HAL_IS_BIT_SET(PWR->CSR, PWR_CSR_REGLPF)))
- 253              		.loc 1 156 3 is_stmt 1 view .LVU28
- 254              		.loc 1 156 9 is_stmt 0 view .LVU29
- 255 0022 00E0     		b	.L20
- 256              	.L22:
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccsS9T8y.s 			page 8
-
-
+ 252              		.loc 1 156 3 is_stmt 1 view .LVU28
+ 253              		.loc 1 156 9 is_stmt 0 view .LVU29
+ 254 0022 00E0     		b	.L20
+ 255              	.L22:
  157:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pwr_ex.c ****   {
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccpeeh7j.s 			page 8
+
+
  158:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pwr_ex.c ****     wait_loop_index--;
- 257              		.loc 1 158 5 is_stmt 1 view .LVU30
- 258              		.loc 1 158 20 is_stmt 0 view .LVU31
- 259 0024 0138     		subs	r0, r0, #1
- 260              	.LVL3:
- 261              	.L20:
+ 256              		.loc 1 158 5 is_stmt 1 view .LVU30
+ 257              		.loc 1 158 20 is_stmt 0 view .LVU31
+ 258 0024 0138     		subs	r0, r0, #1
+ 259              	.LVL3:
+ 260              	.L20:
  156:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pwr_ex.c ****   {
- 262              		.loc 1 156 34 is_stmt 1 view .LVU32
- 263 0026 0028     		cmp	r0, #0
- 264 0028 03D0     		beq	.L21
+ 261              		.loc 1 156 34 is_stmt 1 view .LVU32
+ 262 0026 0028     		cmp	r0, #0
+ 263 0028 03D0     		beq	.L21
  156:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pwr_ex.c ****   {
- 265              		.loc 1 156 38 is_stmt 0 discriminator 1 view .LVU33
- 266 002a 064B     		ldr	r3, .L25
- 267 002c 5B68     		ldr	r3, [r3, #4]
+ 264              		.loc 1 156 38 is_stmt 0 discriminator 1 view .LVU33
+ 265 002a 064B     		ldr	r3, .L25
+ 266 002c 5B68     		ldr	r3, [r3, #4]
  156:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pwr_ex.c ****   {
- 268              		.loc 1 156 34 discriminator 1 view .LVU34
- 269 002e 9B06     		lsls	r3, r3, #26
- 270 0030 F8D4     		bmi	.L22
- 271              	.L21:
+ 267              		.loc 1 156 34 discriminator 1 view .LVU34
+ 268 002e 9B06     		lsls	r3, r3, #26
+ 269 0030 F8D4     		bmi	.L22
+ 270              	.L21:
  159:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pwr_ex.c ****   }
  160:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pwr_ex.c **** 
  161:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pwr_ex.c ****   if (HAL_IS_BIT_SET(PWR->CSR, PWR_CSR_REGLPF))
- 272              		.loc 1 161 3 is_stmt 1 view .LVU35
- 273              		.loc 1 161 7 is_stmt 0 view .LVU36
- 274 0032 044B     		ldr	r3, .L25
- 275 0034 5B68     		ldr	r3, [r3, #4]
- 276              		.loc 1 161 6 view .LVU37
- 277 0036 9B06     		lsls	r3, r3, #26
- 278 0038 01D4     		bmi	.L24
+ 271              		.loc 1 161 3 is_stmt 1 view .LVU35
+ 272              		.loc 1 161 7 is_stmt 0 view .LVU36
+ 273 0032 044B     		ldr	r3, .L25
+ 274 0034 5B68     		ldr	r3, [r3, #4]
+ 275              		.loc 1 161 6 view .LVU37
+ 276 0036 9B06     		lsls	r3, r3, #26
+ 277 0038 01D4     		bmi	.L24
  162:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pwr_ex.c ****   {
  163:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pwr_ex.c ****     return HAL_TIMEOUT;
  164:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pwr_ex.c ****   }
  165:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pwr_ex.c **** 
  166:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pwr_ex.c ****   return HAL_OK;
- 279              		.loc 1 166 10 view .LVU38
- 280 003a 0020     		movs	r0, #0
- 281              	.LVL4:
- 282              	.L23:
+ 278              		.loc 1 166 10 view .LVU38
+ 279 003a 0020     		movs	r0, #0
+ 280              	.LVL4:
+ 281              	.L23:
  167:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pwr_ex.c **** }
- 283              		.loc 1 167 1 view .LVU39
- 284              		@ sp needed
- 285 003c 10BD     		pop	{r4, pc}
- 286              	.LVL5:
- 287              	.L24:
+ 282              		.loc 1 167 1 view .LVU39
+ 283              		@ sp needed
+ 284 003c 10BD     		pop	{r4, pc}
+ 285              	.LVL5:
+ 286              	.L24:
  163:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pwr_ex.c ****   }
- 288              		.loc 1 163 12 view .LVU40
- 289 003e 0320     		movs	r0, #3
- 290              	.LVL6:
+ 287              		.loc 1 163 12 view .LVU40
+ 288 003e 0320     		movs	r0, #3
+ 289              	.LVL6:
  163:Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pwr_ex.c ****   }
- 291              		.loc 1 163 12 view .LVU41
- 292 0040 FCE7     		b	.L23
- 293              	.L26:
- 294 0042 C046     		.align	2
- 295              	.L25:
- 296 0044 00700040 		.word	1073770496
- 297 0048 FFBFFFFF 		.word	-16385
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccsS9T8y.s 			page 9
+ 290              		.loc 1 163 12 view .LVU41
+ 291 0040 FCE7     		b	.L23
+ 292              	.L26:
+ 293 0042 C046     		.align	2
+ 294              	.L25:
+ 295 0044 00700040 		.word	1073770496
+ 296 0048 FFBFFFFF 		.word	-16385
+ 297 004c 00000000 		.word	SystemCoreClock
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccpeeh7j.s 			page 9
 
 
- 298 004c 00000000 		.word	SystemCoreClock
- 299 0050 40420F00 		.word	1000000
- 300              		.cfi_endproc
- 301              	.LFE46:
- 303              		.text
- 304              	.Letext0:
- 305              		.file 2 "c:\\users\\jarne\\appdata\\roaming\\gnu mcu eclipse\\arm embedded gcc\\arm-none-eabi\\inc
- 306              		.file 3 "c:\\users\\jarne\\appdata\\roaming\\gnu mcu eclipse\\arm embedded gcc\\arm-none-eabi\\inc
- 307              		.file 4 "Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l011xx.h"
- 308              		.file 5 "Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_def.h"
- 309              		.file 6 "Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h"
-ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccsS9T8y.s 			page 10
+ 298 0050 40420F00 		.word	1000000
+ 299              		.cfi_endproc
+ 300              	.LFE46:
+ 302              		.text
+ 303              	.Letext0:
+ 304              		.file 2 "c:\\users\\jarne\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
+ 305              		.file 3 "c:\\users\\jarne\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
+ 306              		.file 4 "Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l011xx.h"
+ 307              		.file 5 "Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_def.h"
+ 308              		.file 6 "Drivers/CMSIS/Device/ST/STM32L0xx/Include/system_stm32l0xx.h"
+ARM GAS  C:\Users\jarne\AppData\Local\Temp\ccpeeh7j.s 			page 10
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32l0xx_hal_pwr_ex.c
-C:\Users\jarne\AppData\Local\Temp\ccsS9T8y.s:19     .text.HAL_PWREx_GetVoltageRange:0000000000000000 $t
-C:\Users\jarne\AppData\Local\Temp\ccsS9T8y.s:25     .text.HAL_PWREx_GetVoltageRange:0000000000000000 HAL_PWREx_GetVoltageRange
-C:\Users\jarne\AppData\Local\Temp\ccsS9T8y.s:46     .text.HAL_PWREx_GetVoltageRange:000000000000000c $d
-C:\Users\jarne\AppData\Local\Temp\ccsS9T8y.s:51     .text.HAL_PWREx_EnableFastWakeUp:0000000000000000 $t
-C:\Users\jarne\AppData\Local\Temp\ccsS9T8y.s:57     .text.HAL_PWREx_EnableFastWakeUp:0000000000000000 HAL_PWREx_EnableFastWakeUp
-C:\Users\jarne\AppData\Local\Temp\ccsS9T8y.s:77     .text.HAL_PWREx_EnableFastWakeUp:0000000000000010 $d
-C:\Users\jarne\AppData\Local\Temp\ccsS9T8y.s:82     .text.HAL_PWREx_DisableFastWakeUp:0000000000000000 $t
-C:\Users\jarne\AppData\Local\Temp\ccsS9T8y.s:88     .text.HAL_PWREx_DisableFastWakeUp:0000000000000000 HAL_PWREx_DisableFastWakeUp
-C:\Users\jarne\AppData\Local\Temp\ccsS9T8y.s:107    .text.HAL_PWREx_DisableFastWakeUp:000000000000000c $d
-C:\Users\jarne\AppData\Local\Temp\ccsS9T8y.s:113    .text.HAL_PWREx_EnableUltraLowPower:0000000000000000 $t
-C:\Users\jarne\AppData\Local\Temp\ccsS9T8y.s:119    .text.HAL_PWREx_EnableUltraLowPower:0000000000000000 HAL_PWREx_EnableUltraLowPower
-C:\Users\jarne\AppData\Local\Temp\ccsS9T8y.s:139    .text.HAL_PWREx_EnableUltraLowPower:0000000000000010 $d
-C:\Users\jarne\AppData\Local\Temp\ccsS9T8y.s:144    .text.HAL_PWREx_DisableUltraLowPower:0000000000000000 $t
-C:\Users\jarne\AppData\Local\Temp\ccsS9T8y.s:150    .text.HAL_PWREx_DisableUltraLowPower:0000000000000000 HAL_PWREx_DisableUltraLowPower
-C:\Users\jarne\AppData\Local\Temp\ccsS9T8y.s:169    .text.HAL_PWREx_DisableUltraLowPower:000000000000000c $d
-C:\Users\jarne\AppData\Local\Temp\ccsS9T8y.s:175    .text.HAL_PWREx_EnableLowPowerRunMode:0000000000000000 $t
-C:\Users\jarne\AppData\Local\Temp\ccsS9T8y.s:181    .text.HAL_PWREx_EnableLowPowerRunMode:0000000000000000 HAL_PWREx_EnableLowPowerRunMode
-C:\Users\jarne\AppData\Local\Temp\ccsS9T8y.s:206    .text.HAL_PWREx_EnableLowPowerRunMode:0000000000000018 $d
-C:\Users\jarne\AppData\Local\Temp\ccsS9T8y.s:212    .text.HAL_PWREx_DisableLowPowerRunMode:0000000000000000 $t
-C:\Users\jarne\AppData\Local\Temp\ccsS9T8y.s:218    .text.HAL_PWREx_DisableLowPowerRunMode:0000000000000000 HAL_PWREx_DisableLowPowerRunMode
-C:\Users\jarne\AppData\Local\Temp\ccsS9T8y.s:296    .text.HAL_PWREx_DisableLowPowerRunMode:0000000000000044 $d
+C:\Users\jarne\AppData\Local\Temp\ccpeeh7j.s:19     .text.HAL_PWREx_GetVoltageRange:0000000000000000 $t
+C:\Users\jarne\AppData\Local\Temp\ccpeeh7j.s:25     .text.HAL_PWREx_GetVoltageRange:0000000000000000 HAL_PWREx_GetVoltageRange
+C:\Users\jarne\AppData\Local\Temp\ccpeeh7j.s:46     .text.HAL_PWREx_GetVoltageRange:000000000000000c $d
+C:\Users\jarne\AppData\Local\Temp\ccpeeh7j.s:51     .text.HAL_PWREx_EnableFastWakeUp:0000000000000000 $t
+C:\Users\jarne\AppData\Local\Temp\ccpeeh7j.s:57     .text.HAL_PWREx_EnableFastWakeUp:0000000000000000 HAL_PWREx_EnableFastWakeUp
+C:\Users\jarne\AppData\Local\Temp\ccpeeh7j.s:77     .text.HAL_PWREx_EnableFastWakeUp:0000000000000010 $d
+C:\Users\jarne\AppData\Local\Temp\ccpeeh7j.s:82     .text.HAL_PWREx_DisableFastWakeUp:0000000000000000 $t
+C:\Users\jarne\AppData\Local\Temp\ccpeeh7j.s:88     .text.HAL_PWREx_DisableFastWakeUp:0000000000000000 HAL_PWREx_DisableFastWakeUp
+C:\Users\jarne\AppData\Local\Temp\ccpeeh7j.s:107    .text.HAL_PWREx_DisableFastWakeUp:000000000000000c $d
+C:\Users\jarne\AppData\Local\Temp\ccpeeh7j.s:113    .text.HAL_PWREx_EnableUltraLowPower:0000000000000000 $t
+C:\Users\jarne\AppData\Local\Temp\ccpeeh7j.s:119    .text.HAL_PWREx_EnableUltraLowPower:0000000000000000 HAL_PWREx_EnableUltraLowPower
+C:\Users\jarne\AppData\Local\Temp\ccpeeh7j.s:139    .text.HAL_PWREx_EnableUltraLowPower:0000000000000010 $d
+C:\Users\jarne\AppData\Local\Temp\ccpeeh7j.s:144    .text.HAL_PWREx_DisableUltraLowPower:0000000000000000 $t
+C:\Users\jarne\AppData\Local\Temp\ccpeeh7j.s:150    .text.HAL_PWREx_DisableUltraLowPower:0000000000000000 HAL_PWREx_DisableUltraLowPower
+C:\Users\jarne\AppData\Local\Temp\ccpeeh7j.s:169    .text.HAL_PWREx_DisableUltraLowPower:000000000000000c $d
+C:\Users\jarne\AppData\Local\Temp\ccpeeh7j.s:175    .text.HAL_PWREx_EnableLowPowerRunMode:0000000000000000 $t
+C:\Users\jarne\AppData\Local\Temp\ccpeeh7j.s:181    .text.HAL_PWREx_EnableLowPowerRunMode:0000000000000000 HAL_PWREx_EnableLowPowerRunMode
+C:\Users\jarne\AppData\Local\Temp\ccpeeh7j.s:206    .text.HAL_PWREx_EnableLowPowerRunMode:0000000000000018 $d
+C:\Users\jarne\AppData\Local\Temp\ccpeeh7j.s:212    .text.HAL_PWREx_DisableLowPowerRunMode:0000000000000000 $t
+C:\Users\jarne\AppData\Local\Temp\ccpeeh7j.s:218    .text.HAL_PWREx_DisableLowPowerRunMode:0000000000000000 HAL_PWREx_DisableLowPowerRunMode
+C:\Users\jarne\AppData\Local\Temp\ccpeeh7j.s:295    .text.HAL_PWREx_DisableLowPowerRunMode:0000000000000044 $d
 
 UNDEFINED SYMBOLS
 __aeabi_uidiv

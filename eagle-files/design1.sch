@@ -10945,6 +10945,18 @@ Additional diode in needed here
 <text x="17.78" y="154.305" size="1.778" layer="94">Additional circuitry required for wake up interrupt trigger
 Zener diode MM3Z3V0T1G + 47k resistor
 Connect with PA10</text>
+<wire x1="35.56" y1="15.24" x2="22.86" y2="15.24" width="0.1524" layer="95"/>
+<wire x1="22.86" y1="15.24" x2="22.86" y2="-10.16" width="0.1524" layer="95"/>
+<wire x1="22.86" y1="-10.16" x2="30.48" y2="-10.16" width="0.1524" layer="95"/>
+<wire x1="30.48" y1="-10.16" x2="30.48" y2="-5.08" width="0.1524" layer="95"/>
+<wire x1="30.48" y1="-5.08" x2="81.28" y2="-5.08" width="0.1524" layer="95"/>
+<wire x1="81.28" y1="-5.08" x2="81.28" y2="-20.32" width="0.1524" layer="95"/>
+<wire x1="81.28" y1="-20.32" x2="30.48" y2="-20.32" width="0.1524" layer="95"/>
+<wire x1="30.48" y1="-20.32" x2="30.48" y2="-10.16" width="0.1524" layer="95"/>
+<text x="33.02" y="-17.78" size="1.778" layer="95">Add digital potentiometer in series with R12 
+to control output voltage and reduce
+ output power if input voltage is not 
+sufficient enough</text>
 </plain>
 <instances>
 <instance part="IC3" gate="G$1" x="127" y="106.68" smashed="yes">

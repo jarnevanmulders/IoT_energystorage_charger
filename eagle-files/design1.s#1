@@ -11559,6 +11559,15 @@ Connect with PA10</text>
 <wire x1="93.98" y1="25.4" x2="93.98" y2="30.48" width="0.1524" layer="95"/>
 <text x="96.52" y="27.305" size="1.778" layer="94">Add boot button</text>
 <wire x1="86.36" y1="35.56" x2="93.98" y2="30.48" width="0.1524" layer="95"/>
+<wire x1="121.92" y1="48.26" x2="121.92" y2="116.84" width="0.1524" layer="95"/>
+<wire x1="121.92" y1="116.84" x2="99.06" y2="116.84" width="0.1524" layer="95"/>
+<wire x1="99.06" y1="116.84" x2="99.06" y2="127" width="0.1524" layer="95"/>
+<wire x1="99.06" y1="127" x2="187.96" y2="127" width="0.1524" layer="95"/>
+<wire x1="187.96" y1="127" x2="187.96" y2="116.84" width="0.1524" layer="95"/>
+<wire x1="187.96" y1="116.84" x2="121.92" y2="116.84" width="0.1524" layer="95"/>
+<text x="101.6" y="118.745" size="1.778" layer="94">These pin could be used for:
+- informing application MCU, energy storage is charging
+- informing application MCU, energy storage is fully charger by small pulse</text>
 </plain>
 <instances>
 <instance part="IC2" gate="G$1" x="66.04" y="55.88" smashed="yes">
